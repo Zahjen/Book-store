@@ -1,0 +1,38 @@
+@use "../../variable/color";
+@use "../../variable/mixin";
+
+* {
+    @include mixin.initialization();
+    @include mixin.justify-text();
+
+    font-family: "Poppins", sans-serif;
+
+    scrollbar-width: thin;
+    scrollbar-color: color.$dark-blue;
+
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 9px;
+        height: 9px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border: 10px solid color.$gray;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: color.$dark-blue;
+        border-radius: 5px;
+    }
+}
+
+body {
+    background-color: color.$metallic-blue;
+    color: color.$off-white;
+
+    a {
+        text-decoration: none;
+    }   
+}

@@ -1,0 +1,68 @@
+@use "../../variable/mixin";
+@use "../../variable/color";
+@use "../../variable/padding";
+@use "../../variable/size";
+
+nav #nav-checkbox, nav .nav-button {
+    display: none;
+}
+
+nav .nav-bar-container {
+    @include mixin.width-height(size.$width-nav-bar, 100vh);
+    @include mixin.flex(column, space-between, center);
+    background-color: color.$dark-blue;
+    color: color.$off-white;
+    padding: padding.$TB-body 0;
+    position: fixed;
+    border-left: size.$border-left-nav-bar solid color.$dark-blue;
+
+    .logo {
+        @include mixin.flex(column, center, center);
+
+        img {
+            @include mixin.width-height(70px, auto);
+            margin-right: size.$border-left-nav-bar;
+        }
+    }
+
+    .nav-links {
+        @include mixin.flex(column, center, center);
+        @include mixin.width-height(100%, 100%);
+
+        a {
+            @include mixin.width-height(100%, auto);
+            @include mixin.transition(transform, 0.1s, linear);
+            text-align: center;
+            color: color.$off-white;
+            margin: 5px 0;
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .active {
+            border-bottom-left-radius: 30px;
+            border-top-left-radius: 30px;
+            background-color: color.$metallic-blue;
+            color: color.$off-white;
+            padding: 15px;
+        }
+
+        .contact-link {
+            @include mixin.width-height(100%, auto);
+            @include mixin.flex(row, center, center);
+            margin-top: 35px;
+            padding-right: size.$border-left-nav-bar;
+        }
+    }
+}
+
+
+@media screen and (max-height: 500px) {
+    nav .nav-bar-container {
+        justify-content: center;
+
+        .logo, .nav-links .contact-link, .ghost {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="51mm"
+   viewBox="0 0 50 51"
+   version="1.1"
+   id="svg2954"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
+   sodipodi:docname="logo-min.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2956"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.7184441"
+     inkscape:cx="205.70934"
+     inkscape:cy="169.33923"
+     inkscape:window-width="1872"
+     inkscape:window-height="1023"
+     inkscape:window-x="48"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2951" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2921"
+       style="fill:none;stroke:#d0e7dd;stroke-width:0.514523;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 40.513822,0.3610109 h 6.766436 c 1.364181,0 2.462478,1.0978286 2.462478,2.4615563 V 48.177199 c 0,1.363717 -1.09825,2.461533 -2.462478,2.461533 h -6.766436 c -1.364228,0 -2.462525,-1.097828 -2.462525,-2.461533 V 2.8225672 c 0,-1.3637043 1.09825,-2.4615563 2.462525,-2.4615563 z m -25.417156,-0.018707 6.536096,1.7512413 c 1.31769,0.3530822 2.094313,1.6977177 1.741364,3.01496 L 11.634874,48.917726 c -0.35275,1.317242 -1.6979606,2.093461 -3.0156483,1.740368 L 2.0831868,48.906478 C 0.76548551,48.553396 -0.01113749,47.208748 0.34182301,45.891506 L 12.081063,2.0822987 c 0.35275,-1.3172424 1.69796,-2.0934622 3.015603,-1.7404033 z m 12.275488,0.018707 h 6.766378 c 1.36424,0 2.462525,1.0978286 2.462525,2.4615563 V 48.177199 c 0,1.363717 -1.09825,2.461533 -2.462525,2.461533 h -6.766378 c -1.364239,0 -2.462524,-1.097828 -2.462524,-2.461533 V 2.8225672 c 0,-1.3637043 1.098249,-2.4615563 2.462524,-2.4615563 z"
+       inkscape:export-filename="/home/sab/Bureau/E-commerce/pdf_info/Images/minLogo.png"
+       inkscape:export-xdpi="2000"
+       inkscape:export-ydpi="2000" />
+  </g>
+</svg>

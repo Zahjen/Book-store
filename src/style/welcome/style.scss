@@ -1,0 +1,27 @@
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+@use "../../variable/padding";
+
+body {
+    @include mixin.width-height(100%, 100vh);
+    @include mixin.flex(column, center, center);
+    padding: padding.$TB-body padding.$LR-body;
+
+    h1 {
+        font-size: 60px;
+        text-align: center;
+
+        span {
+            color: color.$light-blue;
+        }
+    }
+
+    div {
+        margin: 50px 0;
+    }
+
+    a {
+        @include button.button-fill();
+    }
+}

@@ -1,0 +1,55 @@
+@mixin initialization {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex($direction, $justifyContent, $alignItem) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}
+
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin border-radius($borderRadius) {
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    -ms-border-radius: $borderRadius;
+    -o-border-radius: $borderRadius;
+    border-radius: $borderRadius;
+}
+
+@mixin justify-text {
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+
+@mixin transition($content, $time, $wayItGoes) {
+    -webkit-transition: $content $time $wayItGoes;
+    -moz-transition: $content $time $wayItGoes;
+    -ms-transition: $content $time $wayItGoes;
+    -o-transition: $content $time $wayItGoes;
+    transition: $content $time $wayItGoes;
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+
+@mixin clip-path($value) {
+    -webkit-clip-path: $value;
+    clip-path: $value;
+}

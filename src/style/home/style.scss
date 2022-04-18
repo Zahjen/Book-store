@@ -1,0 +1,76 @@
+@use "../../variable/size";
+@use "../../variable/padding";
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+
+.section-global {
+    padding: padding.$TB-body padding.$LR-body padding.$TB-body calc(size.$width-nav-bar + padding.$LR-body);
+
+    article {
+        #welcome-container {
+            @include mixin.width-height(auto, 55px);
+            @include mixin.flex(row, flex-start, center);
+            margin-bottom: 60px;
+
+            #welcome-img {
+                @include mixin.width-height(auto, 55px);
+                margin-right: 20px;
+            }
+
+            #welcome-text  {
+                @include mixin.flex(column, center, flex-start);
+                line-height: 1;
+
+                #welcome-word {
+                    font-size: 25px;
+                }
+
+                #username-word {
+                    color: color.$light-blue;
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .title {
+            font-size: 45px;
+            margin-bottom: 60px;
+        }
+
+        .popular-container {
+            @include mixin.flex(row, flex-start, center);
+            flex-wrap: wrap;
+
+            .popular-book-container {
+                @include mixin.flex(row, flex-start, center);
+                @include mixin.width-height(450px, 150px);
+                margin-right: 20px;
+                margin-bottom: 35px;
+                flex-shrink: 0;
+
+                .popular-book-img {
+                    @include mixin.width-height(auto, 150px);
+                }
+
+                .popular-book-text {
+                    @include mixin.flex(column, center, flex-start);
+                    @include mixin.width-height(100%, 100%);
+                    padding: 15px;
+                    font-size: 18px;
+                    background-color: color.$dark-blue;
+
+                    .popular-book-title {
+                        color: color.$light-blue;
+                        font-style: italic;
+                    }
+    
+                    a {
+                        @include button.button-fill();
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

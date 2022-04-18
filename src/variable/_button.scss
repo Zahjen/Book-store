@@ -1,0 +1,32 @@
+@use "mixin";
+@use "color";
+
+@mixin button-fill() {
+    @include mixin.border-radius(50px);
+
+    background-color: color.$light-blue;
+    border: 1px solid color.$light-blue;
+    color: color.$metallic-blue;
+    padding: 10px 30px;
+    font-size: 16px;
+
+    &:hover {
+        background-color: color.$metallic-blue;
+        color: color.$light-blue;
+    }
+}
+
+@mixin button-empty() {
+    @include mixin.border-radius(50px);
+
+    background-color: color.$metallic-blue;
+    border: 1px solid color.$light-blue;
+    color: color.$light-blue;
+    padding: 10px 30px;
+    font-size: 16px;
+
+    &:hover {
+        background-color: color.$light-blue;
+        color: color.$metallic-blue;
+    }
+}
