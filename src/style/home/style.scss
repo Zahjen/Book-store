@@ -5,9 +5,12 @@
 @use "../../variable/button";
 
 .section-global {
+    @include mixin.flex(row, center, flex-start);
     padding: padding.$TB-body padding.$LR-body padding.$TB-body calc(size.$width-nav-bar + padding.$LR-body);
 
     article {
+        @include mixin.width-height(1100px, auto);
+
         #welcome-container {
             @include mixin.width-height(auto, 55px);
             @include mixin.flex(row, flex-start, center);
@@ -39,34 +42,37 @@
         }
 
         .popular-container {
-            @include mixin.flex(row, flex-start, center);
-            flex-wrap: wrap;
+            @include mixin.flex(column, flex-start, stretch);
 
             .popular-book-container {
                 @include mixin.flex(row, flex-start, center);
-                @include mixin.width-height(450px, 150px);
-                margin-right: 20px;
+                @include mixin.width-height(100%, 150px);
+                margin-right: 35px;
                 margin-bottom: 35px;
                 flex-shrink: 0;
 
                 .popular-book-img {
                     @include mixin.width-height(auto, 150px);
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
                 }
 
                 .popular-book-text {
                     @include mixin.flex(column, center, flex-start);
                     @include mixin.width-height(100%, 100%);
-                    padding: 15px;
-                    font-size: 18px;
+                    padding: 15px 50px;
+                    font-size: 16px;
                     background-color: color.$dark-blue;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
 
                     .popular-book-title {
                         color: color.$light-blue;
                         font-style: italic;
                     }
-    
+
                     a {
-                        @include button.button-fill();
+                        @include button.button-fill-card();
                         margin-top: 15px;
                     }
                 }

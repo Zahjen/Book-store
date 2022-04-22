@@ -36,11 +36,14 @@
 
             <!-- Navigation link -->
             <div class="nav-links">
-                <a href="#home" class="part-link-page active">
+                <a href="home.php" class="part-link-page active">
                     Home
                 </a>
-                <a href="#search" class="part-link-page">
+                <a href="search.php" class="part-link-page">
                     Search
+                </a>
+                <a href="category.php" class="part-link-page">
+                    Category
                 </a>
                 <a href="#download" class="part-link-page">
                     Download
@@ -69,9 +72,7 @@
 
             <div class="popular-container">
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -79,9 +80,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -89,9 +88,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -99,9 +96,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -109,9 +104,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -119,9 +112,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -129,9 +120,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -139,9 +128,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -149,9 +136,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -159,9 +144,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
@@ -169,19 +152,7 @@
                 </div>
 
                 <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
-                    <div class="popular-book-text">
-                        <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
-                        <a href="">More</a>
-                    </div>
-                </div>
-
-                <div class="popular-book-container">
-                    <div class="popular-book-img">
-                        IMG
-                    </div>
+                    <img src="https://via.placeholder.com/100x150" class="popular-book-img">
                     <div class="popular-book-text">
                         <span class="popular-book-title">Un certain titre</span><span class="popular-book-author">Un certain auteur</span>
                         <a href="">More</a>
