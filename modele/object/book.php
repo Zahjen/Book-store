@@ -16,7 +16,6 @@
         private $language;
         private $url;
         private $mark;
-        private $id_author;
         private $id_category;
         private $id_editor;
         private $date;
@@ -88,11 +87,6 @@
         // Méthode permettantd de récupérer la note d'un livre
         public function get_mark() {
             return $this->mark;
-        }
-
-        // Méthode permettantd de récupérer l'id des auteurs d'un livre
-        public function get_id_author() {
-            return $this->id_author;
         }
 
         // Méthode permettantd de récupérer l'id de la catégorie d'un livre
@@ -167,11 +161,6 @@
         // Méthode permettantd de set la note d'un livre
         public function set_mark($mark) {
             $this->mark = $mark;
-        }
-
-        // Méthode permettantd de set l'id des auteurs d'un livre
-        public function set_id_author($id_author) {
-            $this->id_author = $id_author;
         }
 
         // Méthode permettantd de set l'id de la catégorie d'un livre
