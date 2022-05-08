@@ -11,17 +11,17 @@
     article {
         @include mixin.width-height(1100px, auto);
 
-        #category-container {
+        #download-container {
             @include mixin.width-height(auto, 55px);
             @include mixin.flex(row, flex-start, center);
             margin-bottom: 60px;
 
-            #category-img {
+            #download-img {
                 @include mixin.width-height(auto, 55px);
                 margin-right: 20px;
             }
 
-            #category-text  {
+            #download-text  {
                 @include mixin.flex(column, center, flex-start);
                 line-height: 1.2;
                 font-size: 27px;
@@ -41,23 +41,23 @@
             }
         }
 
-        .category-detail-container {
+        .download-detail-container {
             @include mixin.flex(column, flex-start, stretch);
 
-            .category-detail-book-container {
+            .download-detail-book-container {
                 @include mixin.flex(row, flex-start, center);
                 @include mixin.width-height(100%, 150px);
                 margin-right: 35px;
                 margin-bottom: 35px;
                 flex-shrink: 0;
 
-                .category-detail-book-img {
+                .download-detail-book-img {
                     @include mixin.width-height(auto, 150px);
                     border-top-left-radius: 15px;
                     border-bottom-left-radius: 15px;
                 }
 
-                .category-detail-book-text {
+                .download-detail-book-text {
                     @include mixin.flex(column, center, flex-start);
                     @include mixin.width-height(100%, 100%);
                     padding: 15px 50px;
@@ -66,7 +66,7 @@
                     border-top-right-radius: 15px;
                     border-bottom-right-radius: 15px;
 
-                    .category-detail-book-title {
+                    .download-detail-book-title {
                         color: color.$light-blue;
                         font-style: italic;
                     }

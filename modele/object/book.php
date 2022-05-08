@@ -1,6 +1,6 @@
 <?php
 
-    class Book {
+    class Book implements JsonSerializable {
 
         // -----------------------
         // Déclaration des attributs
@@ -186,6 +186,27 @@
         // -----------------------
         // Methods
         // -----------------------
+
+        // Étant donné que les attributs de la classe sont en privé, pour que la fonnction json_encode() n'affiche pas seulement {}, on doit sérialiser l'objet grace à la méthode qui suit, qui est une surcharge d'une méthode situé dans l'interface JsonSerializable
+        public function jsonSerialize() {
+            $json = [
+                'id_book' => $this->get_id_book(),
+                'title' => $this->get_title(),
+                'description' => $this->get_description(),
+                'nb_pages' => $this->get_nb_pages(),
+                'nb_octets' => $this->get_nb_octets(),
+                'asin' => $this->get_asin(),
+                'tome' => $this->get_tome(),
+                'language' => $this->get_language(),
+                'url' => $this->get_url(),
+                'mark' => $this->get_mark(),
+                'id_category' => $this->get_id_category(),
+                'id_editor' => $this->get_id_editor(),
+                'date' => $this->get_date(),
+                'nb_edition' => $this->get_nb_edition()
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

@@ -4,6 +4,7 @@
     require '../../modele/object/user.php';
 
     session_start();
+    
     $userManager = new userManager($db);
 ?>
 
@@ -59,7 +60,9 @@
                     echo "Entered address does not exist.";
                 } else {
                     if ($user && $user->get_password() == $_POST['password']) {
+                        $_SESSION['id_user'] = $user->get_id_user();
                         $_SESSION['mail'] = $user->get_mail();
+                        $_SESSION['pseudo'] = $user->get_pseudo();
                         header('Location: home.php');
                     } else {
                         echo "Wrong password.";

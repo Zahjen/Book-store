@@ -1,12 +1,5 @@
 <?php
-    require '../../modele/db/connection.php';
-    require '../../modele/db/categoryManager.php';
-    require '../../modele/object/category.php';
-    
-    session_start();
-    $categoryManager = new CategoryManager($db);
-
-    $categories = $categoryManager->get_all();
+    require '../../controller/categoryController.php';
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +51,7 @@
                 <a href="category.php" class="part-link-page active">
                     Category
                 </a>
-                <a href="#download" class="part-link-page">
+                <a href="download.php" class="part-link-page">
                     Download
                 </a>
                 <a href="#profile" class="part-link-page">

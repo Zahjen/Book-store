@@ -55,7 +55,7 @@
         // Méthode permettant de mettre à jour un livre dans la base de données
         public function update(Book $book) {
             try {   
-                $requete = $this->db->prepare('UPDATE book SET title = :title, description = :description, nb_pages = :nb_pages, nb_octets = :nb_octets, asin = :asin, tome = :tome, language = :language, url = :url, mark = :mark, id_category = :id_category, id_editor = :id_editor WHERE id_book = :id_book');
+                $requete = $this->db->prepare('UPDATE book SET title = :title, description = :description, nb_pages = :nb_pages, nb_octets = :nb_octets, asin = :asin, tome = :tome, language = :language, url = :url, mark = :mark, id_category = :id_category, id_editor = :id_editor, date = :date, nb_edition = :nb_edition WHERE id_book = :id_book');
 
                 $requete->bindValue(':id_book', $book->get_id_book(), PDO::PARAM_STR);
                 $requete->bindValue(':title', $book->get_title(), PDO::PARAM_STR);
@@ -95,7 +95,7 @@
             $book = null;
 
             try {   
-                $requete = $this->db->prepare('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor FROM book WHERE id_book = :id_book');
+                $requete = $this->db->prepare('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor, date, nb_edition FROM book WHERE id_book = :id_book');
 
                 $requete->bindValue(':id_book', $id, PDO::PARAM_INT);
 
@@ -118,12 +118,12 @@
             $books = [];
 
             try {
-                $requete = $this->db->query('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor FROM book');
+                $requete = $this->db->query('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor, date, nb_edition FROM book');
 
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $book = new Book();
                     $book->hydrate($datas);
-                    $books[] = $book;
+                    $books[$book->get_id_book()] = $book;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());
@@ -137,12 +137,12 @@
             $books = [];
 
             try {
-                $requete = $this->db->query('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor FROM book ORDER BY id_book DESC LIMIT 10');
+                $requete = $this->db->query('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor, date, nb_edition FROM book ORDER BY id_book DESC LIMIT 10');
 
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $book = new Book();
                     $book->hydrate($datas);
-                    $books[] = $book;
+                    $books[$book->get_id_book()] = $book;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());
@@ -156,7 +156,7 @@
             $books = [];
 
             try {
-                $requete = $this->db->prepare('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor FROM book WHERE id_category = :id_category');
+                $requete = $this->db->prepare('SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, mark, id_category, id_editor, date, nb_edition FROM book WHERE id_category = :id_category');
 
                 $requete->bindValue(':id_category', $id_category, PDO::PARAM_INT);
 

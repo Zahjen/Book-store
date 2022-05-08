@@ -10,7 +10,6 @@
         private $pseudo;
         private $mail;
         private $password;
-        private $id_country;
 
         // -----------------------
         // Constructeur
@@ -49,11 +48,6 @@
             return $this->password;
         }
 
-        // Méthode permettantd de récupérer l'id du pays d'un utilisateur
-        public function get_id_country() {
-            return $this->id_country;
-        }
-
         // -----------------------
         // Setter
         // -----------------------
@@ -76,11 +70,6 @@
         // Méthode permettantd de set le mot de passe d'un utilisateur
         public function set_password($password) {
             $this->password = $password;
-        }
-
-        // Méthode permettantd de set l'id du pays d'un utilisateur
-        public function set_id_country($id_country) {
-            $this->id_country = $id_country;
         }
 
         // -----------------------

@@ -94,7 +94,7 @@
 
         // Méthode permettant de récupérer toutes les catégories présentes dns la base de données
         public function get_all() {
-            $categorys = [];
+            $categories = [];
 
             try {
                 $requete = $this->db->query('SELECT id_category, label FROM category');
@@ -102,13 +102,13 @@
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $category = new Category();
                     $category->hydrate($datas);
-                    $categorys[$category->get_id_category()] = $category;
+                    $categories[$category->get_id_category()] = $category;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());
             }
 
-            return $categorys;
+            return $categories;
         }
 
     }

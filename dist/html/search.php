@@ -47,7 +47,7 @@
                 <a href="category.php" class="part-link-page">
                     Category
                 </a>
-                <a href="#download" class="part-link-page">
+                <a href="download.php" class="part-link-page">
                     Download
                 </a>
                 <a href="#profile" class="part-link-page">

@@ -1,35 +1,5 @@
 <?php
-    $id_category = null;  
-
-    if (isset($_GET['id_category']) && !empty($_GET['id_category']) && is_numeric($_GET['id_category'])) {
-        $id_category = $_GET['id_category'];      
-    } else {
-        echo 'Probleme';
-    }
-
-    require '../../modele/db/connection.php';
-    require '../../modele/db/categoryManager.php';
-    require '../../modele/object/category.php';
-    require '../../modele/db/bookManager.php';
-    require '../../modele/object/book.php';
-    require '../../modele/db/ecritParManager.php';
-    require '../../modele/object/ecritPar.php';
-    require '../../modele/db/authorManager.php';
-    require '../../modele/object/author.php';
-
-    session_start();
-
-    $bookManager = new BookManager($db);
-    $books = $bookManager->get_book_by_id_category($id_category);
-
-    $ecritParManager = new EcritParManager($db);
-
-    $authorManager = new AuthorManager($db);
-    $author = new Author();
-
-    $categoryManager = new CategoryManager($db);
-    $category = $categoryManager->get($id_category);  
-    
+    require '../../controller/categoryDetailController.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +21,7 @@
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../import/import-category-detail/import.css">
     
-    <title><?php echo $category->get_label(); ?></title>
+    <title><?php echo $categoryLabel; ?></title>
 </head>
 <body>
 
@@ -81,7 +51,7 @@
                 <a href="category.php" class="part-link-page active">
                     Category
                 </a>
-                <a href="#download" class="part-link-page">
+                <a href="download.php" class="part-link-page">
                     Download
                 </a>
                 <a href="#profile" class="part-link-page">
@@ -100,18 +70,18 @@
                 <img src="../asset/image/logo-min.svg" alt="logo-min" id="category-img">
                 <div id="category-text">
                     <span id="category-word">Category</span> 
-                    <span id="category-label"><?php echo $category->get_label() ?></span>
+                    <span id="category-label"><?php echo $categoryLabel ?></span>
                 </div>
             </div>
 
-            <h1 class="title">
-                <a href="category.php" class="material-symbols-outlined title-icon">
+            <a href="category.php" class="title">
+                <span  class="material-symbols-outlined title-icon">
                     chevron_left
-                </a>
-                <span class="title-text">
-                    <?php echo $category->get_label() ?>
                 </span>
-            </h1>
+                <span class="title-text">
+                    <?php echo $categoryLabel ?>
+                </span>
+            </a>
 
             <div class="category-detail-container">
                 <?php foreach($books as $id_book => $book) : ?>
@@ -123,18 +93,18 @@
                             </span>
                             <span class="category-detail-book-author">
                                 <?php 
-                                    $ecritPars = $ecritParManager->get($book->get_id_book());
-                                    foreach($ecritPars as $id_book => $ecritPar) : 
+                                    $writtenBys = $writtenByManager->get($book->get_id_book());
+                                    foreach($writtenBys as $id_book => $writtenBy) : 
                                 ?>
                                     <span>
-                                        <?= $authorManager->get($ecritPar->get_id_author())->get_name() ?>
+                                        <?= $authorManager->get($writtenBy->get_id_author())->get_name() ?>
                                     </span> 
                                     <span>
-                                        <?= $authorManager->get($ecritPar->get_id_author())->get_surname() ?>
+                                        <?= $authorManager->get($writtenBy->get_id_author())->get_surname() ?>
                                     </span> &nbsp;
                                 <?php endforeach ?>
                             </span>
-                            <a href="">
+                            <a href="book-detail.php?id_book=<?= $book->get_id_book() ?>">
                                 More
                             </a>
                         </div>

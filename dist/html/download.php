@@ -1,5 +1,5 @@
 <?php
-    require '../../controller/homeController.php';
+    require '../../controller/downloadController.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <!-- Styles sheet -->
-    <link rel="stylesheet" media="screen and (min-width: 950px)" href="../import/import-home/import.css">
-    <link rel="stylesheet" media="screen and (min-width: 650px) and (max-width: 949px)" href="../import/import-home/import-tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 950px)" href="../import/import-download/import.css">
     
-    <title>Home</title>
+    <title>Download</title>
 </head>
 <body>
 
@@ -40,16 +42,16 @@
 
             <!-- Navigation link -->
             <div class="nav-links">
-                <a href="home.php" class="part-link-page active">
+                <a href="home.php" class="part-link-page">
                     Home
                 </a>
                 <a href="search.php" class="part-link-page">
                     Search
                 </a>
-                <a href="category.php" class="part-link-page">
+                <a href="download.php" class="part-link-page">
                     Category
                 </a>
-                <a href="download.php" class="part-link-page">
+                <a href="download.php" class="part-link-page active">
                     Download
                 </a>
                 <a href="#profile" class="part-link-page">
@@ -64,27 +66,27 @@
     <section class="section-global">
 
         <article>
-            <div id="welcome-container">
-                <img src="../asset/image/logo-min.svg" alt="logo-min" id="welcome-img">
-                <div id="welcome-text">
-                    <span id="welcome-word">Welcome</span> 
-                    <span id="username-word"><?php echo $userPseudo ?></span>
+            <div id="download-container">
+                <img src="../asset/image/logo-min.svg" alt="logo-min" id="download-img">
+                <div id="download-text">
+                    <span class="download-word"><?php echo $userPseudo; ?></span> 
+                    <span class="download-word">Download</span>
                 </div>
             </div>
 
-            <h1 class="title">Latest entries</h1>
+            <h1 class="title">Download</h1>
 
-            <div class="last-container">
-                <?php foreach($books as $id_book => $book) : ?>
-                    <div class="last-book-container">
-                        <img src="https://via.placeholder.com/100x150" class="last-book-img">
-                        <div class="last-book-text">
-                            <span class="last-book-title">
-                                <?= $book->get_title() ?>
+            <div class="download-detail-container">
+                <?php foreach($downloads as $download) : ?>
+                    <div class="download-detail-book-container">
+                        <img src="https://via.placeholder.com/100x150" class="download-detail-book-img">
+                        <div class="download-detail-book-text">
+                            <span class="download-detail-book-title">
+                                <?= $bookManager->get($download->get_id_book())->get_title(); ?>
                             </span>
-                            <span class="last-book-author">
+                            <span class="download-detail-book-author">
                                 <?php 
-                                    $writtenBys = $writtenByManager->get($book->get_id_book());
+                                    $writtenBys = $writtenByManager->get($download->get_id_book());
                                     foreach($writtenBys as $id_book => $writtenBy) : 
                                 ?>
                                     <span>
@@ -95,7 +97,7 @@
                                     </span> &nbsp;
                                 <?php endforeach ?>
                             </span>
-                            <a href="book-detail.php?id_book=<?= $book->get_id_book() ?>">
+                            <a href="book-detail.php?id_book=<?= $bookManager->get($download->get_id_book())->get_id_book() ?>">
                                 More
                             </a>
                         </div>
@@ -107,6 +109,6 @@
     </section>
 
     <script type="application/javascript" src="../javascript/nav-bar.js"></script>
-
 </body>
 </html>
+

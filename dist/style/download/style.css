@@ -9,7 +9,7 @@
   width: 1100px;
   height: auto;
 }
-.section-global article #category-container {
+.section-global article #download-container {
   width: auto;
   height: 55px;
   display: flex;
@@ -18,12 +18,12 @@
   align-items: center;
   margin-bottom: 60px;
 }
-.section-global article #category-container #category-img {
+.section-global article #download-container #download-img {
   width: auto;
   height: 55px;
   margin-right: 20px;
 }
-.section-global article #category-container #category-text {
+.section-global article #download-container #download-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,13 +45,13 @@
   font-size: 45px;
   font-weight: bold;
 }
-.section-global article .category-detail-container {
+.section-global article .download-detail-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
 }
-.section-global article .category-detail-container .category-detail-book-container {
+.section-global article .download-detail-container .download-detail-book-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -62,13 +62,13 @@
   margin-bottom: 35px;
   flex-shrink: 0;
 }
-.section-global article .category-detail-container .category-detail-book-container .category-detail-book-img {
+.section-global article .download-detail-container .download-detail-book-container .download-detail-book-img {
   width: auto;
   height: 150px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text {
+.section-global article .download-detail-container .download-detail-book-container .download-detail-book-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,11 +81,11 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text .category-detail-book-title {
+.section-global article .download-detail-container .download-detail-book-container .download-detail-book-text .download-detail-book-title {
   color: #d0e7dd;
   font-style: italic;
 }
-.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text a {
+.section-global article .download-detail-container .download-detail-book-container .download-detail-book-text a {
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
@@ -98,7 +98,7 @@
   font-size: 16px;
   margin-top: 15px;
 }
-.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text a:hover {
+.section-global article .download-detail-container .download-detail-book-container .download-detail-book-text a:hover {
   background-color: #303f56;
   color: #d0e7dd;
 }

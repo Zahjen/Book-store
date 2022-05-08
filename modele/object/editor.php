@@ -8,8 +8,6 @@
 
         private $id_editor;
         private $label;
-        private $date;
-        private $nb_edition;
 
         // -----------------------
         // Constructeur
@@ -19,8 +17,6 @@
         public function __construct($id_editor, $label, $date, $nb_edition) {
             $this->set_id_editor($id_editor);
             $this->set_label($label);
-            $this->set_date($date);
-            $this->set_nb_edition($nb_edition);
         }*/
 
         // -----------------------
@@ -59,16 +55,6 @@
         // Méthode permettantd de set le label d'un éditeur
         public function set_label($label) {
             $this->label = $label;
-        }
-
-        // Méthode permettantd de set le date d'un éditeur
-        public function set_date($date) {
-            $this->date = $date;
-        }
-
-        // Méthode permettantd de set le mot de passe d'un éditeur
-        public function set_nb_edition($nb_edition) {
-            $this->nb_edition = $nb_edition;
         }
 
         // -----------------------
