@@ -11,53 +11,52 @@
     article {
         @include mixin.width-height(1100px, auto);
 
-        #welcome-container {
+        #category-container {
             @include mixin.width-height(auto, 55px);
             @include mixin.flex(row, flex-start, center);
             margin-bottom: 60px;
 
-            #welcome-img {
+            #category-img {
                 @include mixin.width-height(auto, 55px);
                 margin-right: 20px;
             }
 
-            #welcome-text  {
+            #category-text  {
                 @include mixin.flex(column, center, flex-start);
-                line-height: 1;
-
-                #welcome-word {
-                    font-size: 25px;
-                }
-
-                #username-word {
-                    color: color.$light-blue;
-                    font-size: 35px;
-                }
+                line-height: 1.2;
+                font-size: 27px;
             }
         }
 
         .title {
+            @include mixin.flex(row, flex-start, center);
             font-size: 45px;
             margin-bottom: 60px;
+
+            .title-icon{
+                font-size: 45px;
+                font-weight: bold;
+                color: color.$off-white;
+            }
         }
 
-        .last-container {
+        .category-detail-container {
             @include mixin.flex(column, flex-start, stretch);
 
-            .last-book-container {
+            .category-detail-book-container {
                 @include mixin.flex(row, flex-start, center);
                 @include mixin.width-height(100%, 150px);
                 margin-right: 35px;
                 margin-bottom: 35px;
                 flex-shrink: 0;
 
-                .last-book-img {
+                .category-detail-book-img {
                     @include mixin.width-height(auto, 150px);
                     border-top-left-radius: 15px;
                     border-bottom-left-radius: 15px;
                 }
 
-                .last-book-text {
+                .category-detail-book-text {
                     @include mixin.flex(column, center, flex-start);
                     @include mixin.width-height(100%, 100%);
                     padding: 15px 50px;
@@ -66,7 +65,7 @@
                     border-top-right-radius: 15px;
                     border-bottom-right-radius: 15px;
 
-                    .last-book-title {
+                    .category-detail-book-title {
                         color: color.$light-blue;
                         font-style: italic;
                     }

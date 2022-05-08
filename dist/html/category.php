@@ -1,3 +1,14 @@
+<?php
+    require '../../modele/db/connection.php';
+    require '../../modele/db/categoryManager.php';
+    require '../../modele/object/category.php';
+    
+    session_start();
+    $categoryManager = new CategoryManager($db);
+
+    $categories = $categoryManager->get_all();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +28,7 @@
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../import/import-category/import.css">
     
-    <title>Home</title>
+    <title>Category</title>
 </head>
 <body>
 
@@ -73,50 +84,16 @@
             <h1 class="title">Category</h1>
 
             <div class="category-container">
-                <a href="" class="category-text-container">
-                    <span class="category-text">
-                        Category
-                    </span>
-                    <span class="material-symbols-outlined">
-                        chevron_right
-                    </span>
-                </a>
-
-                <a href="" class="category-text-container">
-                    <span class="category-text">
-                        Category
-                    </span>
-                    <span class="material-symbols-outlined">
-                        chevron_right
-                    </span>
-                </a>
-
-                <a href="" class="category-text-container">
-                    <span class="category-text">
-                        Category
-                    </span>
-                    <span class="material-symbols-outlined">
-                        chevron_right
-                    </span>
-                </a>
-
-                <a href="" class="category-text-container">
-                    <span class="category-text">
-                        Category
-                    </span>
-                    <span class="material-symbols-outlined">
-                        chevron_right
-                    </span>
-                </a>
-
-                <a href="" class="category-text-container">
-                    <span class="category-text">
-                        Category
-                    </span>
-                    <span class="material-symbols-outlined">
-                        chevron_right
-                    </span>
-                </a>
+                <?php foreach($categories as $id_category => $category) : ?>
+                    <a href="category-detail.php?id_category=<?= $id_category ?>" class="category-text-container">
+                        <span class="category-text">
+                            <?= $category->get_label() ?>
+                        </span>
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                    </a>
+                <?php endforeach ?>
             </div>
         </article>
         
@@ -125,3 +102,4 @@
     <script type="application/javascript" src="../javascript/nav-bar.js"></script>
 </body>
 </html>
+

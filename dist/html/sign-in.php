@@ -1,3 +1,12 @@
+<?php
+    require '../../modele/db/connection.php';
+    require '../../modele/db/userManager.php';
+    require '../../modele/object/user.php';
+
+    session_start();
+    $userManager = new userManager($db);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +31,11 @@
 
         <img src="../asset/image/logo.svg" alt="logo">
 
-        <form action="">
+        <form action="" method="post">
     
             <div class="input-container container-mail">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
+                <label for="mail">Email</label>
+                <input type="text" id="mail" name="mail">
             </div>
 
             <div class="input-container container-password">
@@ -34,13 +43,30 @@
                 <input type="password" id="password" name="password">
             </div>
 
-            <input type="submit" value="Sign In" id="sign">
+            <input type="submit" name="submit" value="Sign In" id="sign">
 
         </form>
 
         <a href="sign-up.php">
             Sign Up
         </a>
+
+        <?php
+            if (isset($_POST['submit']) && isset($_POST['mail'])) {
+                $user = $userManager->login($_POST['mail']);
+
+                if (!$user) {
+                    echo "Entered address does not exist.";
+                } else {
+                    if ($user && $user->get_password() == $_POST['password']) {
+                        $_SESSION['mail'] = $user->get_mail();
+                        header('Location: home.php');
+                    } else {
+                        echo "Wrong password.";
+                    }
+                }
+            }
+        ?>
 
     </section>
 

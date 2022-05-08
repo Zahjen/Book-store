@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +30,21 @@
         Let's start using the platform!
     </div>
 
-    <a href="dist/html/sign-in.php">
-        Connection page
-    </a>
-    
+    <?php
+        if (!isset($_SESSION['mail'])) {
+            echo '
+                <a href="dist/html/sign-in.php">
+                    Start surfing
+                </a>
+            ';
+        } else {
+            echo '
+                <a href="dist/html/home.php">
+                    Start surfing
+                </a>
+            ';
+        }
+    ?>
 
 </body>
 </html>

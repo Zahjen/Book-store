@@ -1,3 +1,15 @@
+<?php
+    require '../../modele/db/connection.php';
+    require '../../modele/db/userManager.php';
+    require '../../modele/object/user.php';
+    require '../../modele/db/countryManager.php';
+    require '../../modele/object/country.php';
+    
+    session_start();
+    $userManager = new UserManager($db);
+    $countryManager = new CountryManager($db);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,16 +34,21 @@
 
         <img src="../asset/image/logo.svg" alt="logo">
 
-        <form action="">
+        <form action="" method="post">
 
             <div class="input-container container-username">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="pseudo">
             </div>
     
             <div class="input-container container-mail">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
+                <label for="mail">Email</label>
+                <input type="text" id="mail" name="mail">
+            </div>
+
+            <div class="input-container container-country">
+                <label for="ecountry">Country</label>
+                <input type="text" id="country" name="country">
             </div>
 
             <div class="input-container container-password">
@@ -44,9 +61,38 @@
                 <input type="password" id="check-password" name="check-password">
             </div>
 
-            <input type="submit" value="Sign Up" id="sign">
+            <input type="submit" value="Sign Up" id="sign" name="submit">
 
         </form>
+
+        <?php
+            if (isset($_POST['submit'])) {
+                if ($_POST['password'] == $_POST['check-password']) {
+                    $postCountry = [
+                        'label' => $_POST['country'],
+                    ];
+                    $country = new Country();
+                    $country->hydrate($postCountry);
+                    $id = $countryManager->insert($country);
+
+                    $last_inserted_country_id = $db->lastInsertId();
+
+                    $postUser = [
+                        'pseudo' => $_POST['pseudo'],
+                        'mail' => $_POST['mail'],
+                        'password' => $_POST['password'],
+                        'id_country' => $last_inserted_country_id,
+                    ];
+                    $user = new User();
+                    $user->hydrate($postUser);
+                    $userManager->insert($user);
+
+                    header("Location: home.php");
+                } else {
+                    echo 'Password are not the same';
+                }
+            }
+        ?>
 
     </section>
 

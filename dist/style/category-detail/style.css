@@ -9,7 +9,7 @@
   width: 1100px;
   height: auto;
 }
-.section-global article #welcome-container {
+.section-global article #category-container {
   width: auto;
   height: 55px;
   display: flex;
@@ -18,36 +18,39 @@
   align-items: center;
   margin-bottom: 60px;
 }
-.section-global article #welcome-container #welcome-img {
+.section-global article #category-container #category-img {
   width: auto;
   height: 55px;
   margin-right: 20px;
 }
-.section-global article #welcome-container #welcome-text {
+.section-global article #category-container #category-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  line-height: 1;
-}
-.section-global article #welcome-container #welcome-text #welcome-word {
-  font-size: 25px;
-}
-.section-global article #welcome-container #welcome-text #username-word {
-  color: #d0e7dd;
-  font-size: 35px;
+  line-height: 1.2;
+  font-size: 27px;
 }
 .section-global article .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   font-size: 45px;
   margin-bottom: 60px;
 }
-.section-global article .last-container {
+.section-global article .title .title-icon {
+  font-size: 45px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+.section-global article .category-detail-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
 }
-.section-global article .last-container .last-book-container {
+.section-global article .category-detail-container .category-detail-book-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -58,13 +61,13 @@
   margin-bottom: 35px;
   flex-shrink: 0;
 }
-.section-global article .last-container .last-book-container .last-book-img {
+.section-global article .category-detail-container .category-detail-book-container .category-detail-book-img {
   width: auto;
   height: 150px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.section-global article .last-container .last-book-container .last-book-text {
+.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,11 +80,11 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.section-global article .last-container .last-book-container .last-book-text .last-book-title {
+.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text .category-detail-book-title {
   color: #d0e7dd;
   font-style: italic;
 }
-.section-global article .last-container .last-book-container .last-book-text a {
+.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text a {
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
@@ -94,7 +97,7 @@
   font-size: 16px;
   margin-top: 15px;
 }
-.section-global article .last-container .last-book-container .last-book-text a:hover {
+.section-global article .category-detail-container .category-detail-book-container .category-detail-book-text a:hover {
   background-color: #303f56;
   color: #d0e7dd;
 }
