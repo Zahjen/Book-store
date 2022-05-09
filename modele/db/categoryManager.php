@@ -102,7 +102,7 @@
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $category = new Category();
                     $category->hydrate($datas);
-                    $categories[$category->get_id_category()] = $category;
+                    $categories[] = $category;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());

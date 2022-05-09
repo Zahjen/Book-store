@@ -50,8 +50,17 @@
                 <a href="download.php" class="part-link-page">
                     Download
                 </a>
-                <a href="#profile" class="part-link-page">
+                <a href="profile.php" class="part-link-page">
                     Profile
+                </a>
+
+                <a href="logout.php" class="log-out">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <span class="log-out-text">
+                        Logout
+                    </span>
                 </a>
             </div>
 

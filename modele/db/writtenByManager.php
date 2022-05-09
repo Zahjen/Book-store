@@ -105,7 +105,7 @@
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $writtenBy = new WrittenBy();
                     $writtenBy->hydrate($datas);
-                    $writtenBys[$writtenBy->get_id_book()] = $writtenBy;
+                    $writtenBys[] = $writtenBy;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());

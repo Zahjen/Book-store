@@ -10,6 +10,10 @@
 
     session_start();
 
+    if (!isset($_SESSION['pseudo'])) {
+        header('Location: sign-in.php');
+    }
+
     $userPseudo = $_SESSION['pseudo'];
 
     // Récupération des derniers livres ajoutés

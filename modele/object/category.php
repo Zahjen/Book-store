@@ -1,6 +1,6 @@
 <?php
 
-    class Category {
+    class Category implements JsonSerializable {
 
         // -----------------------
         // Déclaration des attributs
@@ -50,6 +50,15 @@
         // -----------------------
         // Methods
         // -----------------------
+
+        // Étant donné que les attributs de la classe sont en privé, pour que la fonnction json_encode() n'affiche pas seulement {}, on doit sérialiser l'objet grace à la méthode qui suit, qui est une surcharge d'une méthode situé dans l'interface JsonSerializable
+        public function jsonSerialize() {
+            $json = [
+                'id_category' => $this->get_id_category(),
+                'label' => $this->get_label()
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

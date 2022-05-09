@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../import/import-home/import.css">
     <link rel="stylesheet" media="screen and (min-width: 650px) and (max-width: 949px)" href="../import/import-home/import-tablet.css">
@@ -52,8 +55,17 @@
                 <a href="download.php" class="part-link-page">
                     Download
                 </a>
-                <a href="#profile" class="part-link-page">
+                <a href="profile.php" class="part-link-page">
                     Profile
+                </a>
+
+                <a href="logout.php" class="log-out">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <span class="log-out-text">
+                        Logout
+                    </span>
                 </a>
             </div>
 
@@ -75,7 +87,7 @@
             <h1 class="title">Latest entries</h1>
 
             <div class="last-container">
-                <?php foreach($books as $id_book => $book) : ?>
+                <?php foreach($books as $book) : ?>
                     <div class="last-book-container">
                         <img src="https://via.placeholder.com/100x150" class="last-book-img">
                         <div class="last-book-text">
@@ -85,7 +97,7 @@
                             <span class="last-book-author">
                                 <?php 
                                     $writtenBys = $writtenByManager->get($book->get_id_book());
-                                    foreach($writtenBys as $id_book => $writtenBy) : 
+                                    foreach($writtenBys as $writtenBy) : 
                                 ?>
                                     <span>
                                         <?= $authorManager->get($writtenBy->get_id_author())->get_name() ?>

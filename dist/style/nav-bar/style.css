@@ -55,15 +55,15 @@ nav .nav-bar-container .nav-links .active {
   color: #f0f0f0;
   padding: 15px;
 }
-nav .nav-bar-container .nav-links .contact-link {
-  width: 100%;
-  height: auto;
+nav .nav-bar-container .nav-links .log-out {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 35px;
-  padding-right: 10px;
+  margin-top: 20px;
+}
+nav .nav-bar-container .nav-links .log-out .log-out-text {
+  margin-left: 20px;
 }
 
 @media screen and (max-height: 500px) {

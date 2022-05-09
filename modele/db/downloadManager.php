@@ -105,7 +105,7 @@
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $download = new Download();
                     $download->hydrate($datas);
-                    $downloads[$download->get_id_user()] = $download;
+                    $downloads[] = $download;
                 }
             } catch (Exception $erreur) {
                 die('Erreur : '.$erreur->getMessage());

@@ -54,8 +54,17 @@
                 <a href="download.php" class="part-link-page">
                     Download
                 </a>
-                <a href="#profile" class="part-link-page">
+                <a href="profile.php" class="part-link-page">
                     Profile
+                </a>
+
+                <a href="logout.php" class="log-out">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <span class="log-out-text">
+                        Logout
+                    </span>
                 </a>
             </div>
 
@@ -77,8 +86,8 @@
             <h1 class="title">Category</h1>
 
             <div class="category-container">
-                <?php foreach($categories as $id_category => $category) : ?>
-                    <a href="category-detail.php?id_category=<?= $id_category ?>" class="category-text-container">
+                <?php foreach($categories as $category) : ?>
+                    <a href="category-detail.php?id_category=<?= $category->get_id_category() ?>" class="category-text-container">
                         <span class="category-text">
                             <?= $category->get_label() ?>
                         </span>

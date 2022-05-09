@@ -1,14 +1,14 @@
 <?php
 
-    class Author {
+    class Author implements JsonSerializable  {
 
         // -----------------------
         // Déclaration des attributs
         // -----------------------
 
-        protected $id_author;
-        protected $name;
-        protected $surname;
+        private $id_author;
+        private $name;
+        private $surname;
 
         // -----------------------
         // Constructeur
@@ -62,6 +62,16 @@
         // -----------------------
         // Methods
         // -----------------------
+
+        // Étant donné que les attributs de la classe sont en privé, pour que la fonnction json_encode() n'affiche pas seulement {}, on doit sérialiser l'objet grace à la méthode qui suit, qui est une surcharge d'une méthode situé dans l'interface JsonSerializable
+        public function jsonSerialize() {
+            $json = [
+                'id_author' => $this->get_id_author(),
+                'name' => $this->get_name(),
+                'surname' => $this->get_surname()
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

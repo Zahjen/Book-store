@@ -47,11 +47,13 @@ nav .nav-bar-container {
             padding: 15px;
         }
 
-        .contact-link {
-            @include mixin.width-height(100%, auto);
+        .log-out {
             @include mixin.flex(row, center, center);
-            margin-top: 35px;
-            padding-right: size.$border-left-nav-bar;
+            margin-top: 20px;
+
+            .log-out-text {
+                margin-left: 20px;
+            }
         }
     }
 }

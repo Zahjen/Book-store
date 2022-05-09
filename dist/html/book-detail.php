@@ -54,8 +54,17 @@
                 <a href="download.php" class="part-link-page">
                     Download
                 </a>
-                <a href="#profile" class="part-link-page">
+                <a href="profile.php" class="part-link-page">
                     Profile
+                </a>
+
+                <a href="logout.php" class="log-out">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <span class="log-out-text">
+                        Logout
+                    </span>
                 </a>
             </div>
 
@@ -90,7 +99,7 @@
                         <?php echo $bookTitle; ?>
                     </span>
                     <span class="book-author">
-                        <?php foreach($writtenBys as $id_book => $writtenBy) : ?>
+                        <?php foreach($writtenBys as $writtenBy) : ?>
                             <span>
                                 <?= $authorManager->get($writtenBy->get_id_author())->get_name() ?>
                             </span> 
@@ -132,24 +141,6 @@
                         </span>
                         <span class="detail-db">
                             <?php echo $editorLabel; ?>
-                        </span>
-                    </div>
-
-                    <div class="detail">
-                        <span class="detail-label">
-                            Number of edition : 
-                        </span>
-                        <span class="detail-db">
-                            <?php echo $bookNbEdition; ?>
-                        </span>
-                    </div>
-
-                    <div class="detail">
-                        <span class="detail-label">
-                            Date : 
-                        </span>
-                        <span class="detail-db">
-                            <?php echo $bookDate; ?>
                         </span>
                     </div>
 

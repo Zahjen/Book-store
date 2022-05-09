@@ -1,6 +1,6 @@
 <?php
 
-    class WrittenBy {
+    class WrittenBy implements JsonSerializable {
 
         // -----------------------
         // Déclaration des attributs
@@ -50,6 +50,14 @@
         // -----------------------
         // Methods
         // -----------------------
+
+        public function jsonSerialize() {
+            $json = [
+                'id_book' => $this->get_id_book(),
+                'id_author' => $this->get_id_author(),
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

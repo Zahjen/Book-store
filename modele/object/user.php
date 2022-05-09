@@ -1,6 +1,6 @@
 <?php
 
-    class User {
+    class User implements JsonSerializable {
 
         // -----------------------
         // Déclaration des attributs
@@ -10,6 +10,7 @@
         private $pseudo;
         private $mail;
         private $password;
+        private $is_admin;
 
         // -----------------------
         // Constructeur
@@ -48,6 +49,11 @@
             return $this->password;
         }
 
+        // Méthode permettantd de récupérer le statut d'un utilisateur
+        public function get_is_admin() {
+            return $this->is_admin;
+        }
+
         // -----------------------
         // Setter
         // -----------------------
@@ -72,9 +78,25 @@
             $this->password = $password;
         }
 
+        // Méthode permettantd de set le statut d'un utilisateur
+        public function set_is_admin($is_admin) {
+            $this->is_admin = $is_admin;
+        }
+
         // -----------------------
         // Methods
         // -----------------------
+
+        public function jsonSerialize() {
+            $json = [
+                'id_user' => $this->get_id_user(),
+                'pseudo' => $this->get_pseudo(),
+                'mail' => $this->get_mail(),
+                'password' => $this->get_password(),
+                'is_admin' => $this->get_is_admin()
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

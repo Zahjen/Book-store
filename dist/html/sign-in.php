@@ -1,11 +1,5 @@
 <?php
-    require '../../modele/db/connection.php';
-    require '../../modele/db/userManager.php';
-    require '../../modele/object/user.php';
-
-    session_start();
-    
-    $userManager = new userManager($db);
+    require '../../controller/sign-in.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,22 +47,7 @@
         </a>
 
         <?php
-            if (isset($_POST['submit']) && isset($_POST['mail'])) {
-                $user = $userManager->login($_POST['mail']);
-
-                if (!$user) {
-                    echo "Entered address does not exist.";
-                } else {
-                    if ($user && $user->get_password() == $_POST['password']) {
-                        $_SESSION['id_user'] = $user->get_id_user();
-                        $_SESSION['mail'] = $user->get_mail();
-                        $_SESSION['pseudo'] = $user->get_pseudo();
-                        header('Location: home.php');
-                    } else {
-                        echo "Wrong password.";
-                    }
-                }
-            }
+            signIn($db);
         ?>
 
     </section>

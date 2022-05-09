@@ -48,14 +48,23 @@
                 <a href="search.php" class="part-link-page">
                     Search
                 </a>
-                <a href="download.php" class="part-link-page">
+                <a href="category.php" class="part-link-page">
                     Category
                 </a>
                 <a href="download.php" class="part-link-page active">
                     Download
                 </a>
-                <a href="#profile" class="part-link-page">
+                <a href="profile.php" class="part-link-page">
                     Profile
+                </a>
+
+                <a href="logout.php" class="log-out">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <span class="log-out-text">
+                        Logout
+                    </span>
                 </a>
             </div>
 
@@ -87,7 +96,7 @@
                             <span class="download-detail-book-author">
                                 <?php 
                                     $writtenBys = $writtenByManager->get($download->get_id_book());
-                                    foreach($writtenBys as $id_book => $writtenBy) : 
+                                    foreach($writtenBys as $writtenBy) : 
                                 ?>
                                     <span>
                                         <?= $authorManager->get($writtenBy->get_id_author())->get_name() ?>
@@ -111,4 +120,3 @@
     <script type="application/javascript" src="../javascript/nav-bar.js"></script>
 </body>
 </html>
-

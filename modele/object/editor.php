@@ -1,6 +1,6 @@
 <?php
 
-    class Editor {
+    class Editor implements JsonSerializable {
 
         // -----------------------
         // Déclaration des attributs
@@ -14,7 +14,7 @@
         // -----------------------
 
         /*
-        public function __construct($id_editor, $label, $date, $nb_edition) {
+        public function __construct($id_editor, $label) {
             $this->set_id_editor($id_editor);
             $this->set_label($label);
         }*/
@@ -31,16 +31,6 @@
         // Méthode permettantd de récupérer le label d'un éditeur
         public function get_label() {
             return $this->label;
-        }
-
-        // Méthode permettantd de récupérer le date d'un éditeur
-        public function get_date() {
-            return $this->date;
-        }
-
-        // Méthode permettantd de récupérer le mot de passe d'un éditeur
-        public function get_nb_edition() {
-            return $this->nb_edition;
         }
 
         // -----------------------
@@ -60,6 +50,15 @@
         // -----------------------
         // Methods
         // -----------------------
+
+        // Étant donné que les attributs de la classe sont en privé, pour que la fonnction json_encode() n'affiche pas seulement {}, on doit sérialiser l'objet grace à la méthode qui suit, qui est une surcharge d'une méthode situé dans l'interface JsonSerializable
+        public function jsonSerialize() {
+            $json = [
+                'id_editor' => $this->get_id_editor(),
+                'label' => $this->get_label()
+            ];
+            return $json;
+        }
 
         // -----------------------
         // Hydratation

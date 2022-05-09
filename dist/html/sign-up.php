@@ -1,13 +1,5 @@
 <?php
-    require '../../modele/db/connection.php';
-    require '../../modele/db/userManager.php';
-    require '../../modele/object/user.php';
-    require '../../modele/db/countryManager.php';
-    require '../../modele/object/country.php';
-    
-    session_start();
-    $userManager = new UserManager($db);
-    $countryManager = new CountryManager($db);
+    require '../../controller/sign-up.php';
 ?>
 
 <!DOCTYPE html>
@@ -46,11 +38,6 @@
                 <input type="text" id="mail" name="mail">
             </div>
 
-            <div class="input-container container-country">
-                <label for="ecountry">Country</label>
-                <input type="text" id="country" name="country">
-            </div>
-
             <div class="input-container container-password">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
@@ -65,33 +52,12 @@
 
         </form>
 
+        <a href="sign-in.php">
+            Sign In
+        </a>
+
         <?php
-            if (isset($_POST['submit'])) {
-                if ($_POST['password'] == $_POST['check-password']) {
-                    $postCountry = [
-                        'label' => $_POST['country'],
-                    ];
-                    $country = new Country();
-                    $country->hydrate($postCountry);
-                    $id = $countryManager->insert($country);
-
-                    $last_inserted_country_id = $db->lastInsertId();
-
-                    $postUser = [
-                        'pseudo' => $_POST['pseudo'],
-                        'mail' => $_POST['mail'],
-                        'password' => $_POST['password'],
-                        'id_country' => $last_inserted_country_id,
-                    ];
-                    $user = new User();
-                    $user->hydrate($postUser);
-                    $userManager->insert($user);
-
-                    header("Location: home.php");
-                } else {
-                    echo 'Password are not the same';
-                }
-            }
+            signUp($db);
         ?>
 
     </section>

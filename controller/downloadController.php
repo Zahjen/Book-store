@@ -13,6 +13,11 @@
     require '../../modele/object/author.php';
 
     session_start();
+
+    if (!isset($_SESSION['pseudo'])) {
+        header('Location: sign-in.php');
+    }
+    
     $userPseudo = $_SESSION['pseudo'];
     $userId = $_SESSION['id_user'];
 

@@ -47,14 +47,15 @@
         // Méthode permettant de mettre à jour un utilisateur dans la base de données
         public function update(User $user) {
             try {   
-                $requete = $this->db->prepare('UPDATE user SET pseudo = :pseudo, mail = :mail, password = :password WHERE id_user = :id_user');
+                $requete = $this->db->prepare('UPDATE user SET pseudo = :pseudo, mail = :mail, password = :password, is_admin = :is_admin WHERE id_user = :id_user');
 
                 $requete->bindValue(':id_user', $user->get_id_user(), PDO::PARAM_INT);
 
-                $requete->bindValue(':id', $user->get_id_user(), PDO::PARAM_INT);
-                $requete->bindValue(':pseudo', $user->pseudo(), PDO::PARAM_STR);
-                $requete->bindValue(':mail', $user->mail());
-                $requete->bindValue(':password', $user->password(), PDO::PARAM_STR);
+                $requete->bindValue(':id_user', $user->get_id_user(), PDO::PARAM_INT);
+                $requete->bindValue(':pseudo', $user->get_pseudo(), PDO::PARAM_STR);
+                $requete->bindValue(':mail', $user->get_mail());
+                $requete->bindValue(':password', $user->get_password(), PDO::PARAM_STR);
+                $requete->bindValue(':is_admin', $user->get_is_admin());
 
                 $requete->execute();
             } catch (Exception $erreur) {
@@ -80,7 +81,7 @@
             $user = null;
 
             try {   
-                $requete = $this->db->prepare('SELECT id_user, pseudo, mail, password FROM user WHERE id_user = :id_user');
+                $requete = $this->db->prepare('SELECT id_user, pseudo, mail, password, is_admin FROM user WHERE id_user = :id_user');
 
                 $requete->bindValue(':id_user', $id, PDO::PARAM_INT);
 
@@ -103,7 +104,7 @@
             $users = [];
 
             try {
-                $requete = $this->db->query('SELECT id_user, pseudo, mail, password FROM user');
+                $requete = $this->db->query('SELECT id_user, pseudo, mail, password, is_admin FROM user');
 
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $user = new User();
@@ -123,7 +124,7 @@
             $valide = false;
 
             try {
-                $requete = $this->db->prepare('SELECT id_user, pseudo, mail, password FROM user WHERE mail = ?');
+                $requete = $this->db->prepare('SELECT id_user, pseudo, mail, password, is_admin FROM user WHERE mail = ?');
 
                 $requete->execute(array($mail));
 

@@ -15,11 +15,8 @@
         private $tome;
         private $language;
         private $url;
-        private $mark;
         private $id_category;
         private $id_editor;
-        private $date;
-        private $nb_edition;
         
 
         // -----------------------
@@ -84,11 +81,6 @@
             return $this->url;
         }
 
-        // Méthode permettantd de récupérer la note d'un livre
-        public function get_mark() {
-            return $this->mark;
-        }
-
         // Méthode permettantd de récupérer l'id de la catégorie d'un livre
         public function get_id_category() {
             return $this->id_category;
@@ -97,16 +89,6 @@
         // Méthode permettantd de récupérer l'id de l'éditeur d'un livre
         public function get_id_editor() {
             return $this->id_editor;
-        }
-
-        // Méthode permettantd de récupérer la date d'édition d'un livre
-        public function get_date() {
-            return $this->date;
-        }
-
-        // Méthode permettantd de récupérer le nombre d'édition d'un livre
-        public function get_nb_edition() {
-            return $this->nb_edition;
         }
 
         // -----------------------
@@ -158,11 +140,6 @@
             $this->url = $url;
         }
 
-        // Méthode permettantd de set la note d'un livre
-        public function set_mark($mark) {
-            $this->mark = $mark;
-        }
-
         // Méthode permettantd de set l'id de la catégorie d'un livre
         public function set_id_category($id_category) {
             $this->id_category = $id_category;
@@ -171,16 +148,6 @@
         // Méthode permettantd de set l'id de l'éditeur d'un livre
         public function set_id_editor($id_editor) {
             $this->id_editor = $id_editor;
-        }
-
-        // Méthode permettantd de récupérer la date d'édition d'un livre
-        public function set_date($date) {
-            $this->date = $date;
-        }
-
-        // Méthode permettantd de récupérer le nombre d'édition d'un livre
-        public function set_nb_edition($nb_edition) {
-            $this->nb_edition = $nb_edition;
         }
 
         // -----------------------
@@ -199,11 +166,8 @@
                 'tome' => $this->get_tome(),
                 'language' => $this->get_language(),
                 'url' => $this->get_url(),
-                'mark' => $this->get_mark(),
                 'id_category' => $this->get_id_category(),
                 'id_editor' => $this->get_id_editor(),
-                'date' => $this->get_date(),
-                'nb_edition' => $this->get_nb_edition()
             ];
             return $json;
         }

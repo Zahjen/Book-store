@@ -10,6 +10,12 @@
     require '../../modele/db/authorManager.php';
     require '../../modele/object/author.php';
 
+    session_start();
+
+    if (!isset($_SESSION['pseudo'])) {
+        header('Location: sign-in.php');
+    }
+
     // On déclare l'id de la catégorie que l'on va récupérer via le href de la liste des catégorie
     $id_category = null;  
 
@@ -19,8 +25,6 @@
     } else {
         echo 'Problem';
     }
-
-    session_start();
 
     // On récupère tout les livres liés à une catégorie 
     $bookManager = new BookManager($db);

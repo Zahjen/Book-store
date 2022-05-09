@@ -12,6 +12,12 @@
     require '../../modele/db/editorManager.php';
     require '../../modele/object/editor.php';
 
+    session_start();
+
+    if (!isset($_SESSION['pseudo'])) {
+        header('Location: sign-in.php');
+    }
+
     // On déclare l'id du livre que l'on va récupérer via le href de la liste des livres d'une catégorie
     $id_book = null;  
 
@@ -21,8 +27,6 @@
     } else {
         echo 'Problem';
     }
-
-    session_start();
 
     // Récupération d'un livre grace à l'id de celui ci
     $bookManager = new BookManager($db);
@@ -51,8 +55,6 @@
 
     $bookTitle = $book->get_title();
     $bookDescription = $book->get_description();
-    $bookNbEdition = $book->get_nb_edition();
-    $bookDate = $book->get_date();
     $bookAsin = $book->get_asin();
     $bookTome = ($book->get_tome() == NULL) ? "None" : $book->get_tome();
     $bookLanguage = $book->get_language();
