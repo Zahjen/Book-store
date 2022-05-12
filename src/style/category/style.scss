@@ -1,0 +1,54 @@
+@use "../../variable/size";
+@use "../../variable/padding";
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+
+.section-global {
+    @include mixin.flex(row, center, flex-start);
+    padding: padding.$TB-body padding.$LR-body padding.$TB-body calc(size.$width-nav-bar + padding.$LR-body);
+
+    article {
+        @include mixin.width-height(1100px, auto);
+
+        #category-container {
+            @include mixin.width-height(auto, 55px);
+            @include mixin.flex(row, flex-start, center);
+            margin-bottom: 60px;
+
+            #category-img {
+                @include mixin.width-height(auto, 55px);
+                margin-right: 20px;
+            }
+
+            #category-text  {
+                @include mixin.flex(column, center, flex-start);
+                line-height: 1.2;
+
+                .category-word {
+                    font-size: 27px;
+                }
+            }
+        }
+
+        .title {
+            font-size: 45px;
+            margin-bottom: 60px;
+        }
+
+        .category-container {
+            @include mixin.width-height(100%, auto);
+
+            .category-text-container {
+                @include mixin.flex(row, space-between, center);
+                @include mixin.width-height(100%, auto);
+                @include mixin.border-radius(15px);
+                flex-shrink: 0;
+                padding: 25px 50px;
+                margin-bottom: 25px;
+                background-color: color.$dark-blue;
+                color: color.$off-white;
+            }
+        }
+    }
+}

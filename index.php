@@ -33,13 +33,13 @@
     <?php
         if (!isset($_SESSION['mail'])) {
             echo '
-                <a href="dist/html/sign-in.php">
+                <a href="dist/html/user/sign-in.php">
                     Start surfing
                 </a>
             ';
         } else {
             echo '
-                <a href="dist/html/home.php">
+                <a href="dist/html/user/home.php">
                     Start surfing
                 </a>
             ';
