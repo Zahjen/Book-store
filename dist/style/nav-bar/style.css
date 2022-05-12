@@ -1,0 +1,78 @@
+nav #nav-checkbox, nav .nav-button {
+  display: none;
+}
+
+nav .nav-bar-container {
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #26354c;
+  color: #f0f0f0;
+  padding: 70px 0;
+  position: fixed;
+  border-left: 10px solid #26354c;
+}
+nav .nav-bar-container .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav .nav-bar-container .logo img {
+  width: 70px;
+  height: auto;
+  margin-right: 10px;
+}
+nav .nav-bar-container .nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+nav .nav-bar-container .nav-links a {
+  width: 100%;
+  height: auto;
+  -webkit-transition: transform 0.1s linear;
+  -moz-transition: transform 0.1s linear;
+  -ms-transition: transform 0.1s linear;
+  -o-transition: transform 0.1s linear;
+  transition: transform 0.1s linear;
+  text-align: center;
+  color: #f0f0f0;
+  margin: 5px 0;
+  font-size: 18px;
+  padding: 15px;
+}
+nav .nav-bar-container .nav-links .active {
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  background-color: #303f56;
+  color: #f0f0f0;
+  padding: 15px;
+}
+nav .nav-bar-container .nav-links .log-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+nav .nav-bar-container .nav-links .log-out .log-out-text {
+  margin-left: 20px;
+}
+
+@media screen and (max-height: 500px) {
+  nav .nav-bar-container {
+    justify-content: center;
+  }
+  nav .nav-bar-container .logo, nav .nav-bar-container .nav-links .contact-link, nav .nav-bar-container .ghost {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

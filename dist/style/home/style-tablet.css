@@ -1,0 +1,102 @@
+.section-global {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 70px 70px;
+}
+.section-global article {
+  width: 1100px;
+  height: auto;
+}
+.section-global article #welcome-container {
+  width: auto;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.section-global article #welcome-container #welcome-img {
+  width: auto;
+  height: 55px;
+  margin-right: 20px;
+}
+.section-global article #welcome-container #welcome-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1;
+}
+.section-global article #welcome-container #welcome-text #welcome-word {
+  font-size: 25px;
+}
+.section-global article #welcome-container #welcome-text #username-word {
+  color: #d0e7dd;
+  font-size: 35px;
+}
+.section-global article .title {
+  font-size: 45px;
+  margin-bottom: 60px;
+}
+.section-global article .last-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.section-global article .last-container .last-book-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  flex-shrink: 0;
+}
+.section-global article .last-container .last-book-container .last-book-img {
+  width: auto;
+  height: 150px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.section-global article .last-container .last-book-container .last-book-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 15px 50px;
+  font-size: 14px;
+  background-color: #26354c;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.section-global article .last-container .last-book-container .last-book-text .last-book-title {
+  color: #d0e7dd;
+  font-style: italic;
+}
+.section-global article .last-container .last-book-container .last-book-text a {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #d0e7dd;
+  border: 1px solid #d0e7dd;
+  color: #303f56;
+  padding: 5px 25px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.section-global article .last-container .last-book-container .last-book-text a:hover {
+  background-color: #303f56;
+  color: #d0e7dd;
+}
+
+/*# sourceMappingURL=style-tablet.css.map */

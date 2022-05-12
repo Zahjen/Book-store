@@ -1,0 +1,95 @@
+body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 70px;
+  min-height: 100vh;
+}
+body section {
+  width: 50vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body section img {
+  width: 130px;
+  height: auto;
+  margin-bottom: 50px;
+}
+body section form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body section form div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+body section form div label {
+  color: #828282;
+  font-size: 14px;
+}
+body section form div input {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-bottom: #d0e7dd solid 1px;
+  outline: none;
+  padding: 5px 0;
+  color: #f0f0f0;
+}
+body section form #sign {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #d0e7dd;
+  border: 1px solid #d0e7dd;
+  color: #303f56;
+  padding: 10px 30px;
+  font-size: 16px;
+  text-align: center;
+}
+body section form #sign:hover {
+  background-color: #303f56;
+  color: #d0e7dd;
+}
+body section a {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #303f56;
+  border: 1px solid #d0e7dd;
+  color: #d0e7dd;
+  padding: 10px 30px;
+  font-size: 16px;
+  text-align: center;
+}
+body section a:hover {
+  background-color: #d0e7dd;
+  color: #303f56;
+}
+
+/*# sourceMappingURL=style.css.map */
