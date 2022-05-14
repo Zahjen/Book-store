@@ -89,22 +89,26 @@
 
                 <div class="input-container container-username">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="pseudo" value="<?php echo $userPseudo ?>">
+                    <input type="text" id="username" name="pseudo" value="<?php echo $userPseudo ?>"onkeyup="verifierPseudo(this)">
+                    <span id="champPseudo" class="test"></span>
                 </div>
         
                 <div class="input-container container-mail">
                     <label for="mail">Email</label>
-                    <input type="text" id="mail" name="mail" value="<?php echo $userMail ?>">
+                    <input type="text" id="mail" name="mail" value="<?php echo $userMail ?>"onkeyup="verifierEmail(this)">
+                <span id="champMail" class="test"></span>
                 </div>
 
                 <div class="input-container container-password">
                     <label for="password">New password</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password"onkeyup="checkPassword(this)">
+                <span id="champMdp" class="test"></span>
                 </div>
 
                 <div class="input-container container-check-password">
                     <label for="check-password">Confirm new password</label>
-                    <input type="password" id="check-password" name="check-password">
+                    <input type="password" id="check-password" name="check-password" onkeyup="verifierMdp2()">
+                    <span id="champMdp2" class="test"></span>
                 </div>
 
                 <input type="submit" value="Update" id="update" name="submit">
@@ -117,6 +121,6 @@
         </article>
         
     </section>
-
+    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
 </body>
 </html>

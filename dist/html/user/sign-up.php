@@ -26,26 +26,30 @@
 
         <img src="../../asset/image/logo.svg" alt="logo">
 
-        <form action="" method="post">
+        <form action="" method="post" name="formulaire" >
 
             <div class="input-container container-username">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="pseudo">
+                <input type="text" id="username" name="pseudo" onkeyup="verifierPseudo(this)">
+                <span id="champPseudo" class="test"></span>
             </div>
     
             <div class="input-container container-mail">
                 <label for="mail">Email</label>
-                <input type="text" id="mail" name="mail">
+                <input type="text" id="mail" name="mail"onkeyup="verifierEmail(this)"placeholder="test@test.fr">
+                <span id="champMail" class="test"></span>
             </div>
 
             <div class="input-container container-password">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" onkeyup="checkPassword(this)">
+                <span id="champMdp" class="test"></span>
             </div>
 
             <div class="input-container container-check-password">
                 <label for="check-password">Confirm password</label>
-                <input type="password" id="check-password" name="check-password">
+                <input type="password" id="check-password" name="check-password" onkeyup="verifierMdp2()">
+                    <span id="champMdp2" class="test"></span>
             </div>
 
             <input type="submit" value="Sign Up" id="sign" name="submit">
@@ -62,6 +66,6 @@
 
     </section>
 
-
+    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
 </body>
 </html>

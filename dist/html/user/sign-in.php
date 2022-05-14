@@ -30,12 +30,14 @@
     
             <div class="input-container container-mail">
                 <label for="mail">Email</label>
-                <input type="text" id="mail" name="mail">
+                <input type="text" id="mail" name="mail" onkeyup="verifierEmail(this)"placeholder="test@test.fr">
+                <span id="champMail" class="test"></span>
             </div>
 
             <div class="input-container container-password">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" onkeyup="verifierChampsVide(this, '')">
+                <span id="champAremplir" class="test"></span>
             </div>
 
             <input type="submit" name="submit" value="Sign In" id="sign">
@@ -51,7 +53,7 @@
         ?>
 
     </section>
-
+    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
 
 </body>
 </html>

@@ -91,29 +91,35 @@
 
                 <div class="input-container container-title">
                     <label for="title">Title <span class="madatory-field">*</span></label>
-                    <input type="text" id="title" name="title" value="<?php echo $bookTitle ?>">
+                    <input type="text" id="title" name="title" value="<?php echo $bookTitle ?>"onkeyup="verifierChampsVide(this, '1')">
+                    <span id="champAremplir1" class="test"></span>
                 </div>
         
                 <div class="input-container container-description">
                     <label for="description">Description <span class="madatory-field">*</span></label>
-                    <input type="text" id="description" name="description" value="<?php echo $bookDescription ?>">
+                    <input type="text" id="description" name="description" value="<?php echo $bookDescription ?>"onkeyup="verifierChampsVide(this, '2')">
+                    <span id="champAremplir2" class="test"></span>
                 </div>
 
                 <div class="input-container container-author">
                     <label>Author <span class="madatory-field">*</span></label>
-                    <input type="text" class="author-name" name="author-name" placeholder="name" value="<?php echo $authorName ?>">
-                    <input type="text" class="author-surname" name="author-surname" placeholder="surname" value="<?php echo $authorSurname ?>">
+                    <input type="text" class="author-name" name="author-name" placeholder="name" value="<?php echo $authorName ?>"onkeyup="verifierChampsVide(this, '3')">
+                <span id="champAremplir3" class="test"></span>
+                    <input type="text" class="author-surname" name="author-surname" placeholder="surname" value="<?php echo $authorSurname ?>"onkeyup="verifierChampsVide(this, '4')">
+                <span id="champAremplir4" class="test"></span>
                 </div>
 
 
                 <div class="input-container container-editor">
                     <label for="editor">Editor <span class="madatory-field">*</span></label>
-                    <input type="text" id="editor" name="editor" value="<?php echo $editorLabel ?>">
+                    <input type="text" id="editor" name="editor" value="<?php echo $editorLabel ?>"onkeyup="verifierChampsVide(this, '5')">
+                <span id="champAremplir5" class="test"></span>
                 </div>
 
                 <div class="input-container container-language">
                     <label for="language">Language <span class="madatory-field">*</span></label>
-                    <input type="text" id="language" name="language" value="<?php echo $bookLanguage ?>">
+                    <input type="text" id="language" name="language" value="<?php echo $bookLanguage ?>"onkeyup="verifierChampsVide(this, '6')">
+                <span id="champAremplir6" class="test"></span>
                 </div>
 
                 <div class="input-container container-tome">
@@ -123,22 +129,26 @@
 
                 <div class="input-container container-ASIN">
                     <label for="ASIN">ASIN <span class="madatory-field">*</span></label>
-                    <input type="text" id="ASIN" name="asin" value="<?php echo $bookAsin ?>">
+                    <input type="text" id="ASIN" name="asin" value="<?php echo $bookAsin ?>"onkeyup="verifierAsin(this)">
+                <span id="champAsin" class="test"></span>
                 </div>
 
                 <div class="input-container container-category">
                     <label for="category">Category <span class="madatory-field">*</span></label>
-                    <input type="text" id="category" name="category" value="<?php echo $categoryLabel ?>">
+                    <input type="text" id="category" name="category" value="<?php echo $categoryLabel ?>"onkeyup="verifierChampsVide(this, '7')">
+                <span id="champAremplir7" class="test"></span>
                 </div>
 
                 <div class="input-container container-nb-page">
                     <label for="nb-page">Number of pages <span class="madatory-field">*</span></label>
-                    <input type="number" id="nb-page" name="nb-page" value="<?php echo $bookNbPages ?>">
+                    <input type="number" id="nb-page" name="nb-page" value="<?php echo $bookNbPages ?>"onkeyup="verifierNb(this, '1')">
+                <span id="champNb1" class="test"></span>
                 </div>
 
                 <div class="input-container container-nb-octets">
                     <label for="nb-octets">Number of octets <span class="madatory-field">*</span></label>
-                    <input type="number" id="nb-octets" name="nb-octets" value="<?php echo $bookNbOctets ?>">
+                    <input type="number" id="nb-octets" name="nb-octets" value="<?php echo $bookNbOctets ?>"onkeyup="verifierNb(this, '2')">
+                <span id="champNb2" class="test"></span>
                 </div>
 
                 <input type="submit" value="Update book" id="sign" name="submit">
@@ -152,7 +162,7 @@
         </article>
 
     </section>
-
+    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
 
 </body>
 </html>
