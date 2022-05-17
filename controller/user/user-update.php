@@ -21,7 +21,7 @@
             'id_user' => $userId,
             'pseudo' => $_POST['pseudo'],
             'mail' => $_POST['mail'],
-            'password' => $_POST['password'],
+            'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
             'is_admin' => 0
         ];
 
@@ -40,7 +40,7 @@
             if ($_POST['password'] == $_POST['check-password']) {
                 update_user($userManager, $userId);
 
-                header("Location: home.php");
+                header("Location: ../../html/user/home.php");
             } else {
                 echo 'Password are not the same';
             }

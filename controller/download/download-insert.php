@@ -27,7 +27,12 @@
     $downloadManager = new DownloadManager($db);
     $download = new Download();
     $download->hydrate($postDownload);
-    $downloadManager->insert($download);
+
+    if ($downloadManager->exists($download)) {
+        echo 'You already downloaded this book.';
+    } else {
+        $downloadManager->insert($download);
+    }
 
     header('Location: ../../dist/html/user/download.php');
 

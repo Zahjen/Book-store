@@ -89,7 +89,7 @@
             if (is_everything_valid_insert()) {
                 insert_book($authorManager, $editorManager, $categoryManager, $bookManager, $db);             
 
-                header("Location: admin-book-handle.php");
+                header("Location: ../../html/admin/admin-book-handle.php");
             } else {
                 echo 'Problem';
             }
