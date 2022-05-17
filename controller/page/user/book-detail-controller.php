@@ -32,7 +32,7 @@
 
     // Récupération des id des auteurs d'un livres grace à son id
     $authorManager = new AuthorManager($db);
-    $author = $authorManager->get($id_book); 
+    $author = $authorManager->get($book->get_id_author()); 
 
     // Récupération de l'éditeur d'un livre grace à l'id du livre
     $editorManager = new EditorManager($db);
