@@ -1,7 +1,7 @@
-const regexPseudo = /^[a-zA-Z0-9]{5,15}$/;
+const regexPseudo = /^[a-zA-Z0-9]{2,15}$/;
 const regexLivre = /^[a-zA-Z]([-'\s]?[a-zA-Z]){4,99}$/;
 const regexNb = /^[0-9]{1,5}$/;
-const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/;
 const regexAsin = /^[A-Z0-9]{10}$/;
 
 
@@ -12,7 +12,7 @@ function verifierPseudo(pseudo) {
     monChamp.innerText ='';
 
     if (!pseudo.value.match(regexPseudo)) {
-        monChamp.innerText += 'Enter a username, between 2 and 10 caracters';
+        monChamp.innerText += 'Enter a username, between 2 and 15 caracters';
         document.getElementById('champPseudo').style.display = 'inline-block';
         return false;
     } else {
@@ -22,17 +22,15 @@ function verifierPseudo(pseudo) {
 }
 
 
-function verifierNb(nombre, id) {
-    var identifiant = "champNb";
-    var champ = identifiant.concat(id)
-    let monChamp = document.getElementById(champ);
+function verifierNb(id, nombre) {
+    let monChamp = document.getElementById(id);
     monChamp.innerText ='';
     if (!nombre.value.match(regexNb)) {
         monChamp.innerText += 'Enter a valid number';
-        document.getElementById('champNb').style.display = 'inline-block';
+        monChamp.style.display = 'inline-block';
         return false;
     } else {
-        document.getElementById('champNb').style.display = 'none';
+        monChamp.style.display = 'none';
         return true;}
 }
 
@@ -65,23 +63,19 @@ function verifierEmail(email) {
 }
 
 
-function verifierChampsVide(donnee, id) {
-    var identifiant = "champAremplir";
-    var champ = identifiant.concat(id);
-    let monChamp = document.getElementById(champ);
+function verifierChampVide(id, donnee) {
+    let monChamp = document.getElementById(id);
     let valeur = donnee.value;
-    monChamp.innerText ='';
+    monChamp.innerText = '';
     if (valeur.trim() === '') {
         monChamp.innerText += 'Please fill in this field';
-        document.getElementById('champAremplir').style.display = 'block';
+        monChamp.style.display = 'block';
         return false;
     } else {
-        document.getElementById('champAremplir').style.display = 'none';
+        monChamp.style.display = 'none';
         return true;
     }
 }
-
-
 
 function checkPassword(password) {
     let correct = true;

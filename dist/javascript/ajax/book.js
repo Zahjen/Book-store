@@ -1,34 +1,35 @@
-const url = '../../modele/ajax/book.php';
-const lastContainer = document.querySelector('.last-container');
+const url = '../../../controller/book/book-search.php?statement=';
+const resultContainer = document.querySelector('.result-container');
+const searchButton = document.querySelector('#search-bar-btn');
+const inputValue = document.querySelector('#search-bar-input');
 
-function createBookItem(title, author) {
+function createBookItem(book) {
     let item = `
-        <div class="last-book-container">
-            <img src="https://via.placeholder.com/100x150" class="last-book-img">
-            <div class="last-book-text">
-                <span class="last-book-title">${title}</span>
-                <span class="last-book-author">${author}</span>
-                <a href="">More</a>
-            </div>
+        <div class="result-book-container">
+            <span class="result-book-title">${book.title}</span>
+
+            <a href="book-detail.php?id_book=${book.id_book}">More</a>
         </div>
     `;
 
     return item;
 }
 
-function getAll() {
-    fetch(url, {
+function getBySearch() {
+    fetch(url + inputValue.value, {
         method: "GET",
         headers: new Headers(),
         mode: 'cors',
-        cache: 'default'
+        cache: 'default',
     })
     .then((response) => {
         return response.json();
     })
     .then((json) => {
-        for (book of json) {
-            lastContainer.innerHTML += createBookItem(book.title, book.id_author)
+        let length = Object.keys(json).length
+        
+        for (i = 0 ; i < length ; i++) {
+            resultContainer.innerHTML += createBookItem(json[i])
         }
     })
     .catch((err) => {
@@ -36,4 +37,4 @@ function getAll() {
     });
 }
 
-getAll();
+searchButton.addEventListener('click', getBySearch);
