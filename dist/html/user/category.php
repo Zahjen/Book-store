@@ -20,6 +20,7 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-category/import.css">
+    <link rel="stylesheet" media="screen and (max-width: 950px)" href="../../import/import-category/import-tablet.css">
     
     <title>Category</title>
 </head>

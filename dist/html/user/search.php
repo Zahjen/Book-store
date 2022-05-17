@@ -16,6 +16,7 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-search/import.css">
+    <link rel="stylesheet" media="screen and (max-width: 949px)" href="../../import/import-search/import-tablet.css">
     
     <title>Home</title>
 </head>
@@ -80,8 +81,8 @@
             </div>
 
             <div class="search-bar">
-                <input type="text" name="search-bar" id="search-bar-input" placeholder="e.g. 'Les Fleurs du mal', ...">
-                <button id="search-bar-btn">
+                <input type="text" name="search-bar" id="search-bar-input">
+                <button type='submit' id="search-bar-btn">
                     <span class="material-symbols-outlined search-icon">
                         search
                     </span>
@@ -94,5 +95,7 @@
         </article>
         
     </section>
+
+    <script src="../../javascript/ajax/book.js"></script>
 </body>
 </html>

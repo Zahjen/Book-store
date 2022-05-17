@@ -21,8 +21,9 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-admin-add-book/import.css">
+    <link rel="stylesheet" media="screen and (max-width: 949px)" href="../../import/import-admin-add-book/import-tablet.css">
     
-    <title>Sign Up</title>
+    <title>Add Book</title>
 </head>
 <body>
 
@@ -84,35 +85,35 @@
 
                 <div class="input-container container-title">
                     <label for="title">Title <span class="madatory-field">*</span></label>
-                    <input type="text" id="title" name="title"onkeyup="verifierChampsVide(this, '1')">
-                    <span id="champAremplir1" class="test"></span>
+                    <input type="text" id="title" name="title" onkeyup="verifierChampVide('champTitre', this)">
+                    <span id="champTitre" class="test"></span>
                 </div>
         
                 <div class="input-container container-description">
                     <label for="description">Description <span class="madatory-field">*</span></label>
-                    <input type="text" id="description" name="title"onkeyup="verifierChampsVide(this, '2')">
-                    <span id="champAremplir2" class="test"></span>
+                    <input type="text" id="description" name="description" onkeyup="verifierChampVide('champDescription', this)">
+                    <span id="champDescription" class="test"></span>
                 </div>
 
                 <div class="input-container container-author">
                     <label>Author <span class="madatory-field">*</span></label>
-                    <input type="text" class="author-name" name="author-name" placeholder="name"onkeyup="verifierChampsVide(this, '3')">
-                <span id="champAremplir3" class="test"></span>
-                    <input type="text" class="author-surname" name="author-surname" placeholder="surname"onkeyup="verifierChampsVide(this, '4')">
-                <span id="champAremplir4" class="test"></span>
+                    <input type="text" class="author-name" name="author-name" placeholder="name" onkeyup="verifierChampVide('champPrenomAuteur', this)">
+                    <span id="champPrenomAuteur" class="test"></span>
+                    <input type="text" class="author-surname" name="author-surname" placeholder="surname" onkeyup="verifierChampVide('champNomAuteur', this)">
+                    <span id="champNomAuteur" class="test"></span>
                 </div>
 
 
                 <div class="input-container container-editor">
                     <label for="editor">Editor <span class="madatory-field">*</span></label>
-                    <input type="text" id="editor" name="editor"onkeyup="verifierChampsVide(this, '5')">
-                <span id="champAremplir5" class="test"></span>
+                    <input type="text" id="editor" name="editor" onkeyup="verifierChampVide('champEditeur', this)">
+                    <span id="champEditeur" class="test"></span>
                 </div>
 
                 <div class="input-container container-language">
                     <label for="language">Language <span class="madatory-field">*</span></label>
-                    <input type="text" id="language" name="language"onkeyup="verifierChampsVide(this, '6')">
-                <span id="champAremplir6" class="test"></span>
+                    <input type="text" id="language" name="language" onkeyup="verifierChampVide('champLanguage', this)">
+                    <span id="champLanguage" class="test"></span>
                 </div>
 
                 <div class="input-container container-tome">
@@ -122,26 +123,26 @@
 
                 <div class="input-container container-ASIN">
                     <label for="ASIN">ASIN <span class="madatory-field">*</span></label>
-                    <input type="text" id="ASIN" name="asin"onkeyup="verifierAsin(this)">
-                <span id="champAsin" class="test"></span>
+                    <input type="text" id="ASIN" name="asin" onkeyup="verifierAsin(this)">
+                    <span id="champAsin" class="test"></span>
                 </div>
 
                 <div class="input-container container-category">
                     <label for="category">Category <span class="madatory-field">*</span></label>
-                    <input type="text" id="category" name="category"onkeyup="verifierChampsVide(this, '7')">
-                <span id="champAremplir7" class="test"></span>
+                    <input type="text" id="category" name="category" onkeyup="verifierChampVide('champCategorie', this)">
+                    <span id="champCategorie" class="test"></span>
                 </div>
 
                 <div class="input-container container-nb-page">
                     <label for="nb-page">Number of pages <span class="madatory-field">*</span></label>
-                    <input type="number" id="nb-page" name="nb-page"name="category"onkeyup="verifierNb(this, '1')">
-                <span id="champNb1" class="test"></span>
+                    <input type="number" id="nb-page" name="nb-page" onkeyup="verifierNb('champNbPage', this)">
+                    <span id="champNbPage" class="test"></span>
                 </div>
 
                 <div class="input-container container-nb-octets">
                     <label for="nb-octets">Number of octets <span class="madatory-field">*</span></label>
-                    <input type="number" id="nb-octets" name="nb-octets"onkeyup="verifierNb(this, '2')">
-                <span id="champNb2" class="test"></span>
+                    <input type="number" id="nb-octets" name="nb-octets" onkeyup="verifierNb('champNbOctet', this)">
+                    <span id="champNbOctet" class="test"></span>
                 </div>
 
                 <input type="submit" value="Add book" id="sign" name="submit">
@@ -155,7 +156,8 @@
         </article>
 
     </section>
-    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
+
+    <script type="text/javascript" src="../../javascript/script.js"></script>
 
 </body>
 </html>

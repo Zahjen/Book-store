@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     require '../../../controller/page/user/profile-controller.php';
 ?>
 
@@ -20,6 +21,7 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-profile/import.css">
+    <link rel="stylesheet" media="screen and (max-width: 949px)" href="../../import/import-profile/import-tablet.css">
     
     <title>Profile</title>
 </head>
@@ -96,7 +98,7 @@
                 <div class="input-container container-mail">
                     <label for="mail">Email</label>
                     <input type="text" id="mail" name="mail" value="<?php echo $userMail ?>"onkeyup="verifierEmail(this)">
-                <span id="champMail" class="test"></span>
+                    <span id="champMail" class="test"></span>
                 </div>
 
                 <div class="input-container container-password">
@@ -121,6 +123,6 @@
         </article>
         
     </section>
-    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
+    <script type="text/javascript" src="../../javascript/script.js"></script>
 </body>
 </html>

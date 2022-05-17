@@ -36,8 +36,8 @@
 
             <div class="input-container container-password">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" onkeyup="verifierChampsVide(this, '')">
-                <span id="champAremplir" class="test"></span>
+                <input type="password" id="password" name="password" onkeyup="verifierChampVide('champMotDePasse', this)">
+                <span id="champMotDePasse" class="test"></span>
             </div>
 
             <input type="submit" name="submit" value="Sign In" id="sign">
@@ -53,7 +53,7 @@
         ?>
 
     </section>
-    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
+    <script type="text/javascript" src="../../javascript/script.js"></script>
 
 </body>
 </html>

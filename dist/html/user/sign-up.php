@@ -36,7 +36,7 @@
     
             <div class="input-container container-mail">
                 <label for="mail">Email</label>
-                <input type="text" id="mail" name="mail"onkeyup="verifierEmail(this)"placeholder="test@test.fr">
+                <input type="text" id="mail" name="mail"onkeyup="verifierEmail(this)" placeholder="test@test.fr">
                 <span id="champMail" class="test"></span>
             </div>
 
@@ -66,6 +66,6 @@
 
     </section>
 
-    <script type="text/javascript" src="/Book-store-main/dist/javascript/script.js"></script>
+    <script type="text/javascript" src="../../javascript/script.js"></script>
 </body>
 </html>

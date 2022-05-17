@@ -20,6 +20,8 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-category-detail/import.css">
+    <link rel="stylesheet" media="screen and (min-width: 550px) and (max-width: 949px)" href="../../import/import-category-detail/import-tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 549px)" href="../../import/import-category-detail/import-mobile.css">
     
     <title><?php echo $categoryLabel; ?></title>
 </head>

@@ -20,6 +20,7 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-admin-user-handle/import.css">
+    <link rel="stylesheet" media="screen and (max-width: 949px)" href="../../import/import-admin-user-handle/import-tablet.css">
     
     <title>User Handle</title>
 </head>
@@ -115,8 +116,6 @@
         </article>
         
     </section>
-
-    <script type="application/javascript" src="../../javascript/nav-bar.js"></script>
 
 </body>
 </html>

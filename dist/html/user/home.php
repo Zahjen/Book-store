@@ -21,6 +21,8 @@
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-home/import.css">
     <link rel="stylesheet" media="screen and (min-width: 550px) and (max-width: 949px)" href="../../import/import-home/import-tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 549px)" href="../../import/import-home/import-mobile.css">
+
     
     <title>Home</title>
 </head>
@@ -110,4 +112,4 @@
     </section>
 
 </body>
-</html>
+</html> 

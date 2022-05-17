@@ -20,6 +20,8 @@
 
     <!-- Styles sheet -->
     <link rel="stylesheet" media="screen and (min-width: 950px)" href="../../import/import-book-detail/import.css">
+    <link rel="stylesheet" media="screen and (min-width: 550px) and (max-width: 949px)" href="../../import/import-book-detail/import-tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 549px)" href="../../import/import-book-detail/import-mobile.css">
     
     <title><?php echo $bookTitle; ?></title>
 </head>
@@ -102,16 +104,11 @@
                         <?= $authorName ?>
                         <?= $authorSurname ?>
                     </span>
-                    <div class="button-download-container">
-                        <button class="button-favorite">
-                            Add to Favorite
-                        </button>
-                        <a href="../../../controller/download/download-insert.php?id_book=<?= $id_book ?>" class="button-download">
-                            <span class="material-symbols-outlined">
-                                download
-                            </span>
-                        </a>
-                    </div>
+                    <a href="../../../controller/download/download-insert.php?id_book=<?= $id_book ?>" class="button-download">
+                        <span class="material-symbols-outlined">
+                            download
+                        </span>
+                    </a>
                 </div>
             </div>
 
