@@ -114,6 +114,19 @@
             return $books;
         }
 
+        // Méthode permettant de vérifier si un téléchargement existe déjà
+        public function exists(Download $new_download){
+            $downloads = $this->get_all();
+
+            foreach ($downloads as $download){
+                if ($download->get_id_user() === $new_download->get_id_user() && $download->get_id_book() === $new_download->get_id_book()) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 
 ?>

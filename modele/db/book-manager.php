@@ -173,6 +173,24 @@
             return $books;
         }
 
+        public function get_by_search($statement) {
+            $books = [];
+
+            try {
+                $requete = $this->db->query("SELECT id_book, title, description, nb_pages, nb_octets, asin, tome, language, url, id_category, id_editor, id_author FROM book WHERE title LIKE '%${statement}%'");
+
+                while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
+                    $book = new Book();
+                    $book->hydrate($datas);
+                    $books[] = $book;
+                }
+            } catch (Exception $erreur) {
+                die('Erreur : '.$erreur->getMessage());
+            }
+
+            return $books;
+        }
+
     }
 
 ?>

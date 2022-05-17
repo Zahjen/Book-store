@@ -31,16 +31,20 @@
         
         // Méthode permettant d'ajouter un utilisateur à la base de données
         public function insert(User $user) {
-            try {   
-                $requete = $this->db->prepare('INSERT INTO user (pseudo, mail, password) VALUES(:pseudo, :mail, :password)');
-                
-                $requete->bindValue(':pseudo', $user->get_pseudo(), PDO::PARAM_STR);
-                $requete->bindValue(':mail', $user->get_mail());
-                $requete->bindValue(':password', $user->get_password(), PDO::PARAM_STR);
+            if (!$this->exists($user)) {
+                try {   
+                    $requete = $this->db->prepare('INSERT INTO user (pseudo, mail, password) VALUES(:pseudo, :mail, :password)');
+                    
+                    $requete->bindValue(':pseudo', $user->get_pseudo(), PDO::PARAM_STR);
+                    $requete->bindValue(':mail', $user->get_mail());
+                    $requete->bindValue(':password', $user->get_password(), PDO::PARAM_STR);
 
-                $requete->execute();
-            } catch (Exception $erreur) {
-                die('Erreur : '.$erreur->getMessage());
+                    $requete->execute();
+                } catch (Exception $erreur) {
+                    die('Erreur : '.$erreur->getMessage());
+                }
+            } else {
+                die('This mail is already used.');
             }
         }
 
@@ -99,12 +103,12 @@
             return $user;
         }
 
-        // Méthode permettant de récupérer tous les utilisateurs présents dns la base de données
+        // Méthode permettant de récupérer tous les utilisateurs présents dns la base de données qui ne sont pas des admins
         public function get_all() {
             $users = [];
 
             try {
-                $requete = $this->db->query('SELECT id_user, pseudo, mail, password, is_admin FROM user');
+                $requete = $this->db->query('SELECT id_user, pseudo, mail, password, is_admin FROM user WHERE is_admin = 0');
 
                 while ($datas = $requete->fetch(PDO::FETCH_ASSOC)) {
                     $user = new User();
@@ -138,6 +142,19 @@
             }
 
             return $valide;
+        }
+
+        // Méthode permettant de vérifier que l'adresse mail entrée par l'utilisateur lors du sign up n'existe pas dans la base de données
+        public function exists(User $new_user){
+            $users = $this->get_all();
+
+            foreach ($users as $user){
+                if (strtoupper($user->get_mail()) === strtoupper($new_user->get_mail())){
+                    return true;
+                }
+            }
+
+            return false;
         }
 
     }
