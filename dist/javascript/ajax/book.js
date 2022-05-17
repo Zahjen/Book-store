@@ -16,6 +16,8 @@ function createBookItem(book) {
 }
 
 function getBySearch() {
+    resultContainer.innerHTML = "";
+
     fetch(url + inputValue.value, {
         method: "GET",
         headers: new Headers(),
