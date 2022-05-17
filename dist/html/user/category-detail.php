@@ -103,8 +103,8 @@
                                 <?= $book->get_title() ?>
                             </span>
                             <span class="category-detail-book-author">
-                                <?= $authorManager->get($book->get_id_book())->get_name() ?>
-                                <?= $authorManager->get($book->get_id_book())->get_surname() ?>
+                                <?= $authorManager->get($book->get_id_author())->get_name() ?>
+                                <?= $authorManager->get($book->get_id_author())->get_surname() ?>
                             </span>
                             <a href="book-detail.php?id_book=<?= $book->get_id_book() ?>">
                                 More
