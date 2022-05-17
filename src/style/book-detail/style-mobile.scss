@@ -6,7 +6,7 @@
 
 .section-global {
     @include mixin.flex(row, center, flex-start);
-    padding: padding.$TB-body padding.$LR-body padding.$TB-body calc(size.$width-nav-bar + padding.$LR-body);
+    padding: 40px 15px;
 
     article {
         @include mixin.width-height(1100px, auto);
@@ -42,24 +42,24 @@
         }
 
         .container-book-img-download {
-            @include mixin.flex(row, flex-start, flex-start);
+            @include mixin.flex(column, flex-start, center);
             margin-bottom: 70px;
 
             .book-img {
-                margin-right: 70px;
+                margin-bottom: 40px;
             }
 
             .book-title-download {
                 @include mixin.flex(column, flex-start, flex-start);
 
                 .book-title {
-                    font-size: 25px;
+                    font-size: 18px;
                     color: color.$light-blue;
                     margin-bottom: 10px;
                 }
 
                 .book-author {
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-bottom: 30px;
                 }
 
@@ -76,7 +76,7 @@
         }
 
         .title-description, .title-info {
-            font-size: 35px;
+            font-size: 30px;
             margin-bottom: 30px;
         }
 

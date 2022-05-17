@@ -6,7 +6,7 @@
 
 .section-global {
     @include mixin.flex(row, center, flex-start);
-    padding: padding.$TB-body padding.$LR-body padding.$TB-body calc(size.$width-nav-bar + padding.$LR-body);
+    padding: 40px 15px;
 
     article {
         @include mixin.width-height(1100px, auto);

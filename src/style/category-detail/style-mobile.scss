@@ -1,0 +1,79 @@
+@use "../../variable/size";
+@use "../../variable/padding";
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+
+.section-global {
+    @include mixin.flex(row, center, flex-start);
+    padding: 40px 20px;
+
+    article {
+        @include mixin.width-height(1100px, auto);
+
+        #category-container {
+            @include mixin.width-height(auto, 55px);
+            @include mixin.flex(row, flex-start, center);
+            margin-bottom: 60px;
+
+            #category-img {
+                @include mixin.width-height(auto, 55px);
+                margin-right: 20px;
+            }
+
+            #category-text  {
+                @include mixin.flex(column, center, flex-start);
+                line-height: 1.2;
+                font-size: 27px;
+            }
+        }
+
+        .title {
+            @include mixin.flex(row, flex-start, center);
+            font-size: 45px;
+            margin-bottom: 60px;
+            color: color.$off-white;
+            font-weight: bold;
+
+            .title-icon{
+                font-size: 45px;
+                font-weight: bold;
+            }
+        }
+
+        .category-detail-container {
+            @include mixin.flex(column, flex-start, stretch);
+
+            .category-detail-book-container {
+                @include mixin.flex(row, flex-start, center);
+                @include mixin.width-height(100%, auto);
+                margin-right: 35px;
+                margin-bottom: 35px;
+                flex-shrink: 0;
+
+                .category-detail-book-img {
+                    display: none;
+                }
+
+                .category-detail-book-text {
+                    @include mixin.flex(column, center, flex-start);
+                    @include mixin.width-height(100%, 100%);
+                    @include mixin.border-radius(15px);
+                    padding: 15px 50px;
+                    font-size: 14px;
+                    background-color: color.$dark-blue;
+
+                    .category-detail-book-title {
+                        color: color.$light-blue;
+                        font-style: italic;
+                    }
+
+                    a {
+                        @include button.button-fill-card();
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

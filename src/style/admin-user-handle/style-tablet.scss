@@ -1,0 +1,75 @@
+@use "../../variable/size";
+@use "../../variable/padding";
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+
+.section-global {
+    @include mixin.flex(row, center, flex-start);
+    padding: 40px 20px;
+
+    article {
+        @include mixin.width-height(1100px, auto);
+
+        #welcome-container {
+            @include mixin.width-height(auto, 55px);
+            @include mixin.flex(row, flex-start, center);
+            margin-bottom: 60px;
+
+            #welcome-img {
+                @include mixin.width-height(auto, 55px);
+                margin-right: 20px;
+            }
+
+            #welcome-text  {
+                @include mixin.flex(column, center, flex-start);
+                line-height: 1;
+
+                #welcome-word {
+                    font-size: 25px;
+                }
+
+                #username-word {
+                    color: color.$light-blue;
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .title {
+            font-size: 45px;
+            margin-bottom: 60px;
+        }
+
+        .users-container {
+            @include mixin.flex(column, flex-start, stretch);
+
+            .user-text-container, .user-text-container-directive {
+                padding: 10px 30px;
+                display: grid;
+                grid-template-columns: 50px 1fr 1fr 70px;
+                grid-template-rows: 1fr;
+                align-items: center;
+            }
+
+            .user-text-container-directive {
+                margin-bottom: 25px;
+            }
+
+            .user-text-container {
+                @include mixin.border-radius(15px);
+                background-color: color.$dark-blue;
+                margin-bottom: 20px;
+
+                .icon-delete {
+                    @include mixin.flex(row, center, center);
+                    color: color.$peach;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@use "../../variable/size";
+@use "../../variable/padding";
+@use "../../variable/color";
+@use "../../variable/mixin";
+@use "../../variable/button";
+
+.section-global {
+    @include mixin.flex(row, center, flex-start);
+    padding: 40px 20px;
+
+    article {
+        @include mixin.width-height(1100px, auto);
+
+        #book-add-container {
+            @include mixin.width-height(auto, 55px);
+            @include mixin.flex(row, flex-start, center);
+            margin-bottom: 60px;
+
+            #book-add-img {
+                @include mixin.width-height(auto, 55px);
+                margin-right: 20px;
+            }
+
+            #book-add-text  {
+                @include mixin.flex(column, center, flex-start);
+                line-height: 1;
+                font-size: 30px;
+            }
+        }
+
+        .title {
+            font-size: 45px;
+            margin-bottom: 60px;
+        }
+
+        form {
+            @include mixin.width-height(100%, auto);
+            @include mixin.flex(column, center, center);
+            margin-bottom: 20px;
+
+            div {
+                @include mixin.width-height(100%, auto);
+                @include mixin.flex(column, center, flex-start);
+                margin-bottom: 50px;
+
+                .madatory-field {
+                    color: color.$peach;
+                }
+
+                label {
+                    color: color.$gray;
+                    font-size: 14px;
+                }
+
+                input {
+                    @include mixin.width-height(100%, auto);
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: color.$light-blue solid 1px;
+                    outline: none;
+                    padding: 5px 0;
+                    color: color.$off-white;
+                }
+
+                .author-surname {
+                    margin-top: 15px;
+                }
+            }
+
+            #sign {
+                @include mixin.width-height(100%, auto);
+                @include button.button-fill();
+                text-align: center;
+            }
+        }
+
+        a {
+            @include mixin.width-height(100%, auto);
+            @include button.button-empty();
+            text-align: center;
+        }
+    }
+}
