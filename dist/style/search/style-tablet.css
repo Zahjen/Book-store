@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 70px 70px 70px 320px;
+  padding: 40px 15px;
 }
 .section-global article {
   width: 1100px;
@@ -122,4 +122,4 @@
   color: #d0e7dd;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-tablet.css.map */

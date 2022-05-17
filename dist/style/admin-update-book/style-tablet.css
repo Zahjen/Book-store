@@ -1,0 +1,106 @@
+.section-global {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+.section-global article {
+  width: 1100px;
+  height: auto;
+}
+.section-global article #book-add-container {
+  width: auto;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.section-global article #book-add-container #book-add-img {
+  width: auto;
+  height: 55px;
+  margin-right: 20px;
+}
+.section-global article #book-add-container #book-add-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1;
+  font-size: 30px;
+}
+.section-global article .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 45px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+.section-global article .title .icon-update {
+  font-size: 45px;
+  font-weight: bold;
+}
+.section-global article form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.section-global article form div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.section-global article form div .madatory-field {
+  color: #ea9576;
+}
+.section-global article form div label {
+  color: #828282;
+  font-size: 14px;
+}
+.section-global article form div input {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-bottom: #d0e7dd solid 1px;
+  outline: none;
+  padding: 5px 0;
+  color: #f0f0f0;
+}
+.section-global article form div .author-surname {
+  margin-top: 15px;
+}
+.section-global article form #sign {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #d0e7dd;
+  border: 1px solid #d0e7dd;
+  color: #303f56;
+  padding: 10px 30px;
+  font-size: 16px;
+  text-align: center;
+}
+.section-global article form #sign:hover {
+  background-color: #303f56;
+  color: #d0e7dd;
+}
+
+/*# sourceMappingURL=style-tablet.css.map */

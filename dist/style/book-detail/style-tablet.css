@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 70px 70px 70px 320px;
+  padding: 40px 20px;
 }
 .section-global article {
   width: 1100px;
@@ -53,7 +53,7 @@
   margin-bottom: 70px;
 }
 .section-global article .container-book-img-download .book-img {
-  margin-right: 70px;
+  margin-right: 40px;
 }
 .section-global article .container-book-img-download .book-title-download {
   display: flex;
@@ -62,12 +62,12 @@
   align-items: flex-start;
 }
 .section-global article .container-book-img-download .book-title-download .book-title {
-  font-size: 25px;
+  font-size: 18px;
   color: #d0e7dd;
   margin-bottom: 10px;
 }
 .section-global article .container-book-img-download .book-title-download .book-author {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 .section-global article .container-book-img-download .book-title-download .button-download {
@@ -83,7 +83,7 @@
   font-size: 45px;
 }
 .section-global article .title-description, .section-global article .title-info {
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 30px;
 }
 .section-global article .description-container {
@@ -93,4 +93,4 @@
   font-weight: bold;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-tablet.css.map */
