@@ -5,8 +5,11 @@ Groupe : AKNIOU Sabrina - Anne-Lise FLEISCH
 ## Description
 
 Site Web permettant la consultation de description de livre, accompagné de leur mise en favoris, i.e. onglet Download.
+
 Il existe deux type de connexion. Une connexion pour les utilisateurs, donnant lieu à un dashboard des derniers livres ajoutés, d'un onglet de recherche, d'un classement par catégorie et finalment un onglet profile permettant la modification de son propre compte. 
+
 Il y a également une connexion résérvée au Admin, permettant la gestion des utilisateurs, i.e. suppression, la gestion de livre, ajout, suppression, modification et visualisation de l'ensemble des livres enregistrés.
+
 Ainsi, une utilisateur ne peut que consulter les livres et leur description, alors que l'admin à le pouvoir de les gérer.
 
 Notez également que nous sommes partis du principe qu'il n'existe qu'un seul admin. Il n'est pas possible de le supprimer directement via l'interface graphique (choix délibéré). Ainsi, pour supprimer / ajouter / modifier un admin, il faudra pour le moment passerpar la base de données.
@@ -45,11 +48,11 @@ Nous avons fait le choix de répartir les différents CRUD selon que la connexio
 
 Le pseudo, suivit de l'adresse mail, et finalment du mot de passe associé :
 
-admin, admin@admin.com, Admin123*
-Fahim, fahim@fahim.com, Fahim123*
-Silene, silene@silene.com, Silene123*
-Siham, siham@siham.com, Siham123*
-Gabriel, gabi@gabi.com, Gabriel123*
-Clarisse, clarisse@clarisse.com, Clarisse123*
-Lucas, lucas@lucas.com, Lucas123*
-Sephir, sephir@sephir.com, Sephir123*
+- admin, admin@admin.com, Admin123*
+- Fahim, fahim@fahim.com, Fahim123*
+- Silene, silene@silene.com, Silene123*
+- Siham, siham@siham.com, Siham123*
+- Gabriel, gabi@gabi.com, Gabriel123*
+- Clarisse, clarisse@clarisse.com, Clarisse123*
+- Lucas, lucas@lucas.com, Lucas123*
+- Sephir, sephir@sephir.com, Sephir123*
