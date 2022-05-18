@@ -46,7 +46,7 @@ Nous avons fait le choix de répartir les différents CRUD selon que la connexio
 
 ## Comptes existants 
 
-Le pseudo, suivit de l'adresse mail, et finalment du mot de passe associé :
+Le pseudo, suivit de l'adresse mail, et finalement du mot de passe associé :
 
 - admin, admin@admin.com, Admin123*
 - Fahim, fahim@fahim.com, Fahim123*
